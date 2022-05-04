@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   phonebook.class.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 17:21:47 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/03 19:12:39 by mprigent         ###   ########.fr       */
+/*   Created: 2022/05/03 19:32:16 by mprigent          #+#    #+#             */
+/*   Updated: 2022/05/04 18:55:07 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+# ifndef PHONEBOOK_CLASS_HPP
+# define PHONEBOOK_CLASS_HPP
 
-int main(int argc, char **argv)
+# include <iostream>
+# include "Contact.class.hpp"
+
+class PhoneBook
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-	for (int i = 1; i < argc; i++)
-		for (int j = 0; argv[i][j]; j++)
-			std::cout << (char)toupper(argv[i][j]);
-	std::cout << std::endl;
-	return (0);
-}
+	private:
+		Contact user[8];
+		int count;
+		
+	public:
+		PhoneBook();
+		int add();
+};
+
+# endif
