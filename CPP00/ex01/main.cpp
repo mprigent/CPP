@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 17:56:45 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/04 23:45:22 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/05 01:29:11 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int main()
 			if (PhoneBook.total >= 1)
 				PhoneBook.search();	
 			else
-                std::cout << "\nError: no contact to display\n" << std::endl;
+				std::cout << "\nError: no contact to display\n" << std::endl;
 		}
 		else if (cmd == "EXIT")
 			return (0);
