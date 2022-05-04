@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:36:34 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/05 00:05:35 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/05 00:34:43 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@ PhoneBook::PhoneBook(){
 int	PhoneBook::add()
 {
 	std::string cmd;
-		
+
 	if (PhoneBook::total == 8)
 	{
 		std::cout << "Too many contacts, the last one will be removed" << std::endl;
-        return (0);
+		total = 7;
 	}
 	std::cout << "\n\n------ NEW CONTACT ------\n" << std::endl;
 	std::cout << "* FIRST NAME       ➔ "; std::cin >> cmd; 
@@ -64,13 +64,13 @@ int PhoneBook::search()
 {
 	std::string cmd;
 
-	std::cout << " \n\n___________________________________________ " << std::endl;
-	std::cout << "|                                           |" << std::endl;
-	std::cout << "|  Index   |First Name| Last Name| Nickname |" << std::endl;
-	std::cout << "|                                           |" << std::endl;
+	std::cout << " \n\n___________________________________________ \n";
+	std::cout << "|                                           |\n";
+	std::cout << "|  Index   |First Name| Last Name| Nickname |\n";
+	std::cout << "|                                           |\n";
 	for (int i = 0; i < PhoneBook::total; i++)
 	{
-		std::cout << "|";
+		std::cout << "\n|";
 		std::cout << std::setw(10) << info[i].get_index() + 1;
 		std::cout << "|";
         ft_search_print(info[i].get_first_name());
@@ -81,8 +81,8 @@ int PhoneBook::search()
         std::cout << "|";
 	}
 	std::cout << "\n|___________________________________________|\n\n" << std::endl;
-	std::cout << "Search contact (type index to display): " << std::endl; std::cin >> cmd;
-	while (ft_check_nbr(cmd) == 1 || std::stoi(cmd) > PhoneBook::total || std::stoi(cmd) < 1)
+	std::cout << "Search contact (type index to display): "; std::cin >> cmd;
+	while (ft_check_nbr(cmd) == 1 || std::stoi(cmd) < 1|| std::stoi(cmd) > PhoneBook::total)
     {
         if (ft_check_nbr(cmd) == 1)
 		{

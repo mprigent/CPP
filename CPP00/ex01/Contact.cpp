@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:35:52 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/05 00:06:27 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/05 00:34:35 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,11 +28,7 @@ void Contact::init_phone_number(std::string cmd){
 	if (cmd.size() == 10)
 		phone_number = cmd;
 	else
-	//{
 		std::cout << "Error: please enter a valid phone number (10 digits)" << std::endl;
-	//	return (0);
-	// }
-	// return (1);
 }
 
 void Contact::init_darkest_secret(std::string cmd){
