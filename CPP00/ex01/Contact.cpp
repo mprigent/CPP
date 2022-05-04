@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:35:52 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/05 01:18:42 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/05 01:47:43 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ void Contact::init_nickname(std::string cmd){
 	nickname = cmd;
 }
 
-void Contact::init_phone_number(std::string cmd){
+void Contact::init_phone_number(std::string cmd)
+{
 	while (cmd.size() != 10)
 	{
 		std::cout << "Error: please enter a valid phone number (10 digits)" << std::endl;
