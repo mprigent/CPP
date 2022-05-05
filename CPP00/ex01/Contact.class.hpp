@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 19:32:29 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/05 00:34:30 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/05 22:44:23 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ void ft_search_print(std::string cmd);
 class Contact
 {
 	private:
-		int index;
-		std::string first_name;
-		std::string last_name;
-		std::string nickname;
-		std::string phone_number;
-		std::string darkest_secret;
+		int _index;
+		std::string _first_name;
+		std::string _last_name;
+		std::string _nickname;
+		std::string _phone_number;
+		std::string _darkest_secret;
 		
 	public:
 		void init_index(int nbr);
