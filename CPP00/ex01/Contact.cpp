@@ -6,11 +6,11 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:35:52 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/05 23:20:05 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/09 00:28:25 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "Contact.class.hpp"
+# include "Contact.hpp"
 
 int Contact::get_index() const{
     return _index;

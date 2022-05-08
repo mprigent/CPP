@@ -6,11 +6,11 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:36:34 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/05 23:17:45 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/09 00:27:56 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "PhoneBook.class.hpp"
+# include "PhoneBook.hpp"
 
 PhoneBook::PhoneBook(){
 	total = 0;

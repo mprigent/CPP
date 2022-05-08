@@ -6,11 +6,11 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 17:56:45 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/05 01:29:11 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/09 00:28:19 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "PhoneBook.class.hpp"
+# include "PhoneBook.hpp"
 
 int main()
 {

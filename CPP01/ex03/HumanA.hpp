@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.class.hpp                                :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/03 19:32:16 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/04 23:45:23 by mprigent         ###   ########.fr       */
+/*   Created: 2022/05/08 21:36:37 by mprigent          #+#    #+#             */
+/*   Updated: 2022/05/09 00:24:12 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# ifndef PHONEBOOK_CLASS_HPP
-# define PHONEBOOK_CLASS_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
-# include <iostream>
-# include <iomanip>
-# include "Contact.class.hpp"
+# include "Weapon.hpp"
 
-int ft_check_nbr(std::string cmd);
-
-class PhoneBook
+class HumanA
 {
 	private:
-		Contact info[8];
+		std::string _name;
 		
 	public:
-		int total;
-		PhoneBook();
-		int add();
-		int search();
-		int print_contact(int i);
+		HumanA(/* args */);
+		~HumanA();
+		void attack();
 };
 
-# endif
+#endif
