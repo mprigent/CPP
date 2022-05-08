@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/05 02:01:24 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/06 01:36:24 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/08 17:26:36 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int main(void)
 	
     Zombie *z2 = newZombie("Zombie 2"); // HEAP : dynamique
     z2->announce();
-    delete z2; // zombie 2 destroyed (delete = free)
+    delete z2; // zombie 2 destroyed (delete = free + destructeur)
 	
 	randomChump("Zombie 3"); //no allocation: create and destroye instantly
 	
