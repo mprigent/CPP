@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:35:52 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/09 00:28:25 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:43:08 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,10 @@ void Contact::set_phone_number(std::string cmd)
 	while (cmd.size() != 10)
 	{
 		std::cout << "Error: please enter a valid phone number (10 digits)" << std::endl;
-		std::cout << "* PHONE NUMBER     ➔ "; std::cin >> cmd;
+		std::cout << "* PHONE NUMBER     ➔ "; 
+		std::getline(std::cin, cmd);
+		if (std::cin.eof())
+			break ;
 	}
 	_phone_number = cmd;
 }

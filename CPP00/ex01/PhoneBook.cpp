@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/04 16:36:34 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/09 00:27:56 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:48:36 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,20 +26,38 @@ int	PhoneBook::add()
 		total = 7;
 	}
 	std::cout << "\n\n------ NEW CONTACT ------\n" << std::endl;
-	std::cout << "* FIRST NAME       ➔ "; std::cin >> cmd; 
+	std::cout << "* FIRST NAME       ➔ "; 
+	std::getline(std::cin, cmd);
+	if (std::cin.eof())
+		return (1);
 	info[PhoneBook::total].set_first_name(cmd);
-	std::cout << "* LAST NAME        ➔ "; std::cin >> cmd;
+	std::cout << "* LAST NAME        ➔ ";
+	std::getline(std::cin, cmd);
+	if (std::cin.eof())
+		return (1);
 	info[PhoneBook::total].set_last_name(cmd);
-	std::cout << "* NICKNAME         ➔ "; std::cin >> cmd;
+	std::cout << "* NICKNAME         ➔ ";
+	std::getline(std::cin, cmd);
+	if (std::cin.eof())
+		return (1);
 	info[PhoneBook::total].set_nickname(cmd);
-	std::cout << "* PHONE NUMBER     ➔ "; std::cin >> cmd;
+	std::cout << "* PHONE NUMBER     ➔ "; 
+	std::getline(std::cin, cmd);
+	if (std::cin.eof())
+		return (1);
 	while (ft_check_nbr(cmd) == 1)
 	{
 		std::cout << "Error: please enter a valid phone number (10 digits)" << std::endl;
-		std::cout << "* PHONE NUMBER     ➔ "; std::cin >> cmd;
+		std::cout << "* PHONE NUMBER     ➔ "; 
+		std::getline(std::cin, cmd);
+		if (std::cin.eof())
+			break ;
 	}
 	info[PhoneBook::total].set_phone_number(cmd);
-	std::cout << "* DARKEST SECRET   ➔ "; std::cin >> cmd;
+	std::cout << "* DARKEST SECRET   ➔ "; 
+	std::getline(std::cin, cmd);
+	if (std::cin.eof())
+		return (1);
 	info[PhoneBook::total].set_darkest_secret(cmd);
 	info[PhoneBook::total].set_index(PhoneBook::total);
     if (!(info[total].get_first_name() == "" && info[total].get_last_name() == "" && info[total].get_nickname() == ""))
@@ -81,7 +99,10 @@ int PhoneBook::search()
         std::cout << "|";
 	}
 	std::cout << "\n|___________________________________________|\n\n" << std::endl;
-	std::cout << "Search contact (type index to display): "; std::cin >> cmd;
+	std::cout << "Search contact (type index to display): "; 
+	std::getline(std::cin, cmd);
+	if (std::cin.eof())
+		return (1);
 	while (ft_check_nbr(cmd) == 1 || std::stoi(cmd) < 1|| std::stoi(cmd) > PhoneBook::total)
     {
         if (ft_check_nbr(cmd) == 1)
@@ -94,7 +115,9 @@ int PhoneBook::search()
             std::cout << "\nError: index doesn't exist" << std::endl;
 			std::cout << "Search contact (type index to display):  ";
 		}
-        std::cin >> cmd;
+        std::getline(std::cin, cmd);
+		if (std::cin.eof())
+			break ;
     }
     print_contact(std::stoi(cmd) - 1);
 	return (0);

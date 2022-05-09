@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/03 17:56:45 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/09 00:28:19 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/09 14:49:08 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,12 @@ int main()
 	std::cout << "|__________________________________________________________________________|\n\n\n\n" << std::endl;
 	while (1)
 	{
-		std::cout << "* Choose an option : "; std::cin >> cmd;
+		if (std::cin.eof())
+			break ;
+		std::cout << "* Choose an option : ";
+		std::getline(std::cin, cmd);
+		if (std::cin.eof())
+			break ;
 		if (cmd == "ADD")
 			PhoneBook.add();
 		else if (cmd == "SEARCH")
@@ -33,6 +38,7 @@ int main()
 				PhoneBook.search();	
 			else
 				std::cout << "\nError: no contact to display\n" << std::endl;
+			continue ;
 		}
 		else if (cmd == "EXIT")
 			return (0);
