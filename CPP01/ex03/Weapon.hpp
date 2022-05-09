@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/08 21:35:39 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/09 00:22:23 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/09 21:24:58 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ class Weapon{
 	public:
 		Weapon(std::string _type);
 		~Weapon();
+		std::string get_Type() const;
+		void set_Type(std::string type);
 };
 
 #endif
