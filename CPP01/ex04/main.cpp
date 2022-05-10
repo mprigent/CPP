@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/09 21:35:50 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/10 17:29:44 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/10 18:45:34 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ std::string replace_file(std::string file, std::string s1, std::string s2)
 			{
 				file.erase(i, s1.size());
 				file.insert(i, s2);
-				i += s2.size();
+				i += s2.size() - 1;
 			}
 		}
 	}
@@ -60,7 +60,7 @@ int main(int argc, char **argv)
         getline(s1, file);
         s2 << replace_file(file, argv[2], argv[3]) << std::endl;
     }
-    std::cout << argv[1] << "\033[35m has been replaced !" << std::endl;
+    std::cout << argv[1] << "\033[1m\033[32m has been replaced !" << std::endl;
     s1.close();
     s2.close();
 	return (0);
