@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:35:27 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/13 16:59:44 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/15 20:50:18 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ float	Fixed::toFloat(void) const {
 	return ((float)this->_value / (1 << this->_bit));
 }
 
-std::ostream& operator<<(std::ostream& os, Fixed const& f) {
+std::ostream &operator <<(std::ostream &os, Fixed const &f) {
 	os << f.toFloat();
 	return(os);
 }

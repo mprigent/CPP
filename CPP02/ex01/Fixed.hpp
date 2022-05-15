@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:35:30 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/13 16:47:13 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/15 21:00:16 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,18 @@ class Fixed
 		static const int _bit = 8;
 		
 	public:
-		Fixed();
-		Fixed(const Fixed &f);
-		~Fixed();
-		void setRawBits( int const raw );
-		int getRawBits( void ) const;
-		Fixed& operator=(Fixed const& f);
+		Fixed();							//constructeur par défault
+		Fixed(const Fixed &f);				//constructeur par copie
+		~Fixed();							//destructeur
+		void setRawBits(int const raw);
+		int getRawBits(void) const;
+		Fixed &operator =(Fixed const &f);	//opérateur d'affectation
 		Fixed(const int n);
         Fixed(const float n);
 		float toFloat(void) const;
 		int toInt(void) const;
 };
 
-std::ostream& operator<<(std::ostream& os, Fixed const& f);
+std::ostream &operator <<(std::ostream &os, Fixed const &f);
 
 #endif

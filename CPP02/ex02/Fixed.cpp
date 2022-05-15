@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fixed.cpp                                          :+:      :+:    :+:   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/10 17:36:12 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/15 20:48:55 by mprigent         ###   ########.fr       */
+/*   Created: 2022/05/13 17:08:13 by mprigent          #+#    #+#             */
+/*   Updated: 2022/05/15 21:36:03 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,10 @@ Fixed::~Fixed(void) {
 }
 
 int Fixed::getRawBits(void) const {
-	std::cout << "getRawBits member function called" << std::endl;
 	return this->_value;
 }
 
 void Fixed::setRawBits(int const raw) {
-	std::cout << "setRawBits member function called" << std::endl;
 	this->_value = raw;
 }
 
@@ -39,4 +37,27 @@ Fixed &Fixed::operator =(Fixed const &f) {
 	std::cout << "Copy assignment operator called" << std::endl;
 	this->_value = f.getRawBits();
 	return(*this);
+}
+
+Fixed::Fixed(const int n) {
+    std::cout << "Int constructor called" << std::endl;
+    this->_value = n << this->_bit;
+}
+
+Fixed::Fixed(const float n) {
+    std::cout << "Float constructor called" << std::endl;
+    this->_value = roundf(n * (1 << this->_bit));
+}
+
+int	Fixed::toInt(void) const {
+	return ((int)this->_value >> this->_bit);
+}
+
+float	Fixed::toFloat(void) const {
+	return ((float)this->_value / (1 << this->_bit));
+}
+
+std::ostream &operator <<(std::ostream &os, Fixed const &f) {
+	os << f.toFloat();
+	return(os);
 }
