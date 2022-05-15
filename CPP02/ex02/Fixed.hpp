@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:07:51 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/15 21:28:16 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/15 21:52:53 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ class Fixed
 
 		/* Opérateurs de comparaison */
 		bool operator >(Fixed const &a) const;	//strictement supérieur à
-		bool operator <(Fixed const &a) const;	//strictement inférieur
+		bool operator <(Fixed const &a) const;	//strictement inférieur à
 		bool operator >=(Fixed const &a) const;	//supérieur à
 		bool operator <=(Fixed const &a) const;	//inférieur à
 		bool operator ==(Fixed const &a) const;	//comparateur d'égalité

@@ -6,23 +6,20 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:08:13 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/15 21:36:03 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/15 22:22:06 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(Fixed const &f) {
-	std::cout << "Copy constructor called" << std::endl;
+Fixed::Fixed() : _value(0) {								//constructeur par défault
+}
+
+Fixed::Fixed(Fixed const &f) {								//constructeur par copie
 	*this = f;
 }
 
-Fixed::Fixed(void) : _value(0) {
-	std::cout << "Default constructor called" << std::endl;
-}
-
-Fixed::~Fixed(void) {
-	std::cout << "Destructor called" << std::endl;
+Fixed::~Fixed() {											// destructeur
 }
 
 int Fixed::getRawBits(void) const {
@@ -33,20 +30,17 @@ void Fixed::setRawBits(int const raw) {
 	this->_value = raw;
 }
 
-Fixed &Fixed::operator =(Fixed const &f) {
-	std::cout << "Copy assignment operator called" << std::endl;
+Fixed &Fixed::operator =(Fixed const &f) {					//opérateur d'affectation
 	this->_value = f.getRawBits();
 	return(*this);
 }
 
 Fixed::Fixed(const int n) {
-    std::cout << "Int constructor called" << std::endl;
-    this->_value = n << this->_bit;
+	this->_value = n << this->_bit;
 }
 
 Fixed::Fixed(const float n) {
-    std::cout << "Float constructor called" << std::endl;
-    this->_value = roundf(n * (1 << this->_bit));
+	this->_value = roundf(n * (1 << this->_bit));
 }
 
 int	Fixed::toInt(void) const {
@@ -60,4 +54,113 @@ float	Fixed::toFloat(void) const {
 std::ostream &operator <<(std::ostream &os, Fixed const &f) {
 	os << f.toFloat();
 	return(os);
+}
+bool	Fixed::operator >(const Fixed &cmp) const 			//opérateur de comparaison "strictement supérieur à"
+{
+	return (this->_value > cmp.getRawBits());
+}
+
+bool	Fixed::operator <(const Fixed &cmp) const			//opérateur de comparaison "strictement inférieur à"
+{
+	return (this->_value < cmp.getRawBits());
+}
+
+bool	Fixed::operator >=(const Fixed &cmp) const			//opérateur de comparaison "supérieur à"
+{
+	return (this->_value >= cmp.getRawBits());
+}
+
+bool	Fixed::operator <=(const Fixed &cmp) const			//opérateur de comparaison "inférieur à"
+{
+	return (this->_value <= cmp.getRawBits());
+}
+
+bool	Fixed::operator ==(const Fixed &cmp) const			//comparateur d'égalité
+{
+	return (this->_value == cmp.getRawBits());
+}
+
+bool	Fixed::operator !=(const Fixed &cmp) const			//opérateur de comparaison "différent de"
+{
+	return (this->_value != cmp.getRawBits());
+}
+
+Fixed	Fixed::operator +(const Fixed &cmp) const			//opérateur d'addition
+{
+	Fixed	ret;
+
+	ret.setRawBits(this->_value + cmp.getRawBits());
+	return (ret);
+}
+
+Fixed	Fixed::operator -(const Fixed &cmp) const			//opérateur de soustraction
+{
+	Fixed	ret;
+
+	ret.setRawBits(this->_value - cmp.getRawBits());
+	return (ret);
+}
+
+Fixed	Fixed::operator *(const Fixed &cmp) const			//opérateur de multiplication
+{
+	Fixed	ret;
+
+	ret.setRawBits((this->_value * cmp.getRawBits()) >> this->_bit);
+	return (ret);
+}
+
+Fixed	Fixed::operator /(const Fixed &cmp) const			//opérateur de division
+{
+	Fixed	ret;
+
+	ret.setRawBits((this->_value << this->_bit) / cmp.getRawBits());
+	return (ret);
+}
+
+Fixed	Fixed::operator ++(int)								//opérateur de pré-incrémentation
+{
+	Fixed	tmp(*this);
+
+	++(*this);
+	return (tmp);
+}
+
+Fixed	&Fixed::operator ++()								//opérateur de post-incrémentation
+{
+	this->_value++;
+	return (*this);
+}
+
+Fixed	&Fixed::operator --()								//opérateur de pré-décrémentation
+{
+	this->_value--;
+	return (*this);
+}
+
+Fixed	Fixed::operator --(int)								//opérateur de post-décrémentation
+{
+	Fixed	tmp(*this);
+
+	--(*this);
+	return (tmp);
+}
+
+Fixed &Fixed::min(Fixed &a, Fixed &b)						//retourne le nbr à virgule fixe le plus petit entre a et b
+{
+	return (a < b ? a : b);
+}
+
+Fixed const &Fixed::min(const Fixed &a, const Fixed &b)		//retourne le nbr à virgule fixe constant le plus petit entre a et b
+{
+	return (a < b ? a : b);
+}
+
+Fixed &Fixed::max(Fixed &a, Fixed &b)						//retourne le nbr à virgule fixe le plus grand entre a et b
+{
+	return (a > b ? a : b);
+}
+
+Fixed const &Fixed::max(const Fixed &a, const Fixed &b)		//retourne le nbr à virgule fixe constant le plus grand entre a et b
+{
+	return (a > b ? a : b);
 }

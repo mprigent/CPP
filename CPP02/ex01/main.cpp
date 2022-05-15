@@ -6,13 +6,13 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/11 18:35:05 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/13 16:25:05 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/15 21:43:46 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Fixed.hpp"
 
-int main( void )
+int main(void)
 {
 	Fixed a;
 	Fixed const b( 10 );

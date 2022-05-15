@@ -6,14 +6,14 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/10 17:35:27 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/11 18:23:49 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/15 21:43:54 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
-int main( void ) 
+int main(void) 
 {
 	Fixed a;
 	Fixed b( a );
