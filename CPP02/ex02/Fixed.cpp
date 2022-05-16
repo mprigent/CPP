@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/13 17:08:13 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/15 22:22:06 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/16 15:40:51 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,34 +87,22 @@ bool	Fixed::operator !=(const Fixed &cmp) const			//opérateur de comparaison "d
 
 Fixed	Fixed::operator +(const Fixed &cmp) const			//opérateur d'addition
 {
-	Fixed	ret;
-
-	ret.setRawBits(this->_value + cmp.getRawBits());
-	return (ret);
+	return (this->toFloat() + cmp.toFloat());
 }
 
 Fixed	Fixed::operator -(const Fixed &cmp) const			//opérateur de soustraction
 {
-	Fixed	ret;
-
-	ret.setRawBits(this->_value - cmp.getRawBits());
-	return (ret);
+	return (this->toFloat() - cmp.toFloat());
 }
 
 Fixed	Fixed::operator *(const Fixed &cmp) const			//opérateur de multiplication
 {
-	Fixed	ret;
-
-	ret.setRawBits((this->_value * cmp.getRawBits()) >> this->_bit);
-	return (ret);
+	return (this->toFloat() * cmp.toFloat());
 }
 
 Fixed	Fixed::operator /(const Fixed &cmp) const			//opérateur de division
 {
-	Fixed	ret;
-
-	ret.setRawBits((this->_value << this->_bit) / cmp.getRawBits());
-	return (ret);
+	return (this->toFloat() / cmp.toFloat());
 }
 
 Fixed	Fixed::operator ++(int)								//opérateur de pré-incrémentation
