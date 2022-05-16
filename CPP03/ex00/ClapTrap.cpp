@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:45:39 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/17 01:20:33 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/17 01:37:10 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,10 @@ void ClapTrap::attack(const std::string& target)
 	else
 	{
 		_energy--;
-		std::cout << "ClapTrap " << _name << " \033[1m\033[35mattacks \033[0m" << target << ", causing " << _attack_damage << " points of damage." << std::endl;
+		std::cout << "ClapTrap " << _name << " \033[1m\033[35mattacks \033[0m" << target << ", causing " << _attack_damage << " points of damage. It has lost 1 energy point." << std::endl;
+		std::cout << BOLDCYAN;
+		std::cout << "Total of energy points : " << _energy << std::endl;
+		std::cout << RESET << std::endl;
 	}
 }
 
@@ -107,6 +110,9 @@ void ClapTrap::beRepaired(unsigned int amount)
 	{
 		_energy--;
 		_hit_points += amount;
-		std::cout << "ClapTrap " << _name << " \033[1m\033[32mrepair \033[0mitself for " << amount << " points. " << std::endl;
+		std::cout << "ClapTrap " << _name << " \033[1m\033[32mrepair " << amount << " damages\033[0m and lost 1 energy point." << std::endl;
+		std::cout << BOLDCYAN;
+		std::cout << "Total of energy points : " << _energy << std::endl;
+		std::cout << RESET << std::endl;
 	}
 }
