@@ -6,37 +6,52 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:45:39 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/17 00:03:58 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/17 01:20:33 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-ClapTrap::ClapTrap() : _name(""), _hit_points(10), _energy(10), _attack_damage(0) {
+ClapTrap::ClapTrap() : _name(""), _hit_points(10), _energy(10), _attack_damage(0) 
+{
+	std::cout << std::endl;
+	std::cout << BOLDWHITE;
 	std::cout << "Default ClapTrap constructor called" << std::endl;
+	std::cout << RESET;
 }
 
-ClapTrap::ClapTrap(std::string name) : _hit_points(10), _energy(10), _attack_damage(0) {
+ClapTrap::ClapTrap(std::string name) : _hit_points(10), _energy(10), _attack_damage(0) 
+{
+	std::cout << BOLDWHITE;
 	std::cout << "Name ClapTrap constructor called (" << name << ")" << std::endl;
+	std::cout << RESET;
 	_name = name;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
 {
+	std::cout << BOLDWHITE;
 	std::cout << "Copy ClapTrap constructor called" << std::endl;
+	std::cout << RESET;
 	_name = copy.getName();
 	_hit_points = copy.getHitPoints();
 	_energy = copy.getEnergyPoints();
 	_attack_damage = copy.getEnergyPoints();
 }
 
-ClapTrap::~ClapTrap() {
-	std::cout << "ClapTrap destructor called for " << _name << "" << std::endl;
+ClapTrap::~ClapTrap()
+{
+	std::cout << BOLDWHITE;
+	std::cout << "ClapTrap destructor called"<< std::endl;
+	std::cout << RESET;
 }
 
 ClapTrap &ClapTrap::operator =(const ClapTrap &assign)
 {
+	std::cout << std::endl;
+	std::cout << BOLDWHITE;
 	std::cout << "Assignation ClapTrap operator called" << std::endl;
+	std::cout << RESET;
 	_name = assign.getName();
 	_hit_points = assign.getHitPoints();
 	_energy = assign.getEnergyPoints();
@@ -62,14 +77,14 @@ unsigned int ClapTrap::getAttackDamage() const {
 
 void ClapTrap::attack(const std::string& target)
 {
-	if(_hit_points == 0)
-		std::cout << "ClapTrap " << _name << " can't attack because it has 0 hit points..." << std::endl;
-	else if(_energy == 0)
-		std::cout << "ClapTrap " << _name << " can't attack because it has 0 energy points..." << std::endl;
+	if (_hit_points == 0)
+		std::cout << "ClapTrap " << _name << " \033[1m\033[31mcan't attack \033[0mbecause it has 0 hit points..." << std::endl;
+	else if (_energy == 0)
+		std::cout << "ClapTrap " << _name << " \033[1m\033[31mcan't attack \033[0mbecause it has 0 energy points..." << std::endl;
 	else
 	{
 		_energy--;
-		std::cout << "ClapTrap " << _name << " attacks " << target << ", causing " << _attack_damage << " points of damage." << std::endl;
+		std::cout << "ClapTrap " << _name << " \033[1m\033[35mattacks \033[0m" << target << ", causing " << _attack_damage << " points of damage." << std::endl;
 	}
 }
 
@@ -79,19 +94,19 @@ void ClapTrap::takeDamage(unsigned int amount)
 		_hit_points = 0;
 	else
 		_hit_points -= amount;
-	std::cout << "ClapTrap " << _name << " takes " << amount << " damages. It has now " << _hit_points << " hit points." << std::endl;
+	std::cout << "ClapTrap " << _name << " \033[1m\033[33mtakes " << amount << " damages.\033[0m It has now " << _hit_points << " hit points." << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
-	if(_hit_points == 0)
-		std::cout << "ClapTrap " << _name << " can't repair because it has 0 hit points.." << std::endl;
+	if (_hit_points == 0)
+		std::cout << "ClapTrap " << _name << " \033[1m\033[31mcan't repair \033[0mbecause it has 0 hit points..." << std::endl;
 	else if (_energy == 0)
-		std::cout << "ClapTrap " << _name << " can't repair because it has 0 energy points..." << std::endl;
+		std::cout << "ClapTrap " << _name << " \033[1m\033[31mcan't repair \033[0mbecause it has 0 energy points..." << std::endl;
 	else
 	{
 		_energy--;
 		_hit_points += amount;
-		std::cout << "ClapTrap " << _name << " repaire itself for " << amount << " points. It has now " << _hit_points << " hit points." << std::endl;
+		std::cout << "ClapTrap " << _name << " \033[1m\033[32mrepair \033[0mitself for " << amount << " points. " << std::endl;
 	}
 }
