@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 02:54:14 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/17 03:06:16 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/17 13:41:03 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys()
 {
-	std::cout << BOLDMAGENTA;
-	std::cout << "FragTrap " << _name << " wants to high five !" << std::endl;
+	std::cout << "FragTrap " << _name << " \033[1m\033[35mwants to high five !\033[0m" << std::endl;
 	std::cout << RESET;
 }

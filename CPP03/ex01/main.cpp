@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:24:16 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/17 02:48:43 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/17 13:37:26 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,26 @@
 
 int	main()
 {
-	ScavTrap name("Martine.Scav");
-	ClapTrap name2("Jeanine");
+	std::cout << std::endl;
+	ScavTrap scav_name("Scav");
+	ClapTrap clap_name("Clap");
 	std::cout << std::endl;
 	
-	name.attack("Donatien");
-	name.guardGate();
-	name.beRepaired(10);
-	name2.beRepaired(1);
-	name.attack("Jean-Eude");
-	name2.attack("Georges");
-	name2.takeDamage(10);
-	name.takeDamage(10);
-	name2.beRepaired(10);
+	scav_name.attack("Donatien");
+	scav_name.guardGate();
+	scav_name.takeDamage(8);
+	
 	std::cout << std::endl;
-	name.attack("Jeanine");
-	name.beRepaired(1);
+	
+	scav_name.attack("Jean-Eude");
+	scav_name.beRepaired(10);
+	clap_name.attack("Georges");
+	clap_name.takeDamage(10);
+	clap_name.beRepaired(10);
+
 	std::cout << std::endl;
+
+	scav_name.guardGate();
+	
 	return(0);
 }
