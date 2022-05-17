@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:45:58 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/17 02:26:06 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/17 02:57:37 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ class ClapTrap
 		ClapTrap();									// default constructor
 		ClapTrap(std::string name);					// name constructor
 		ClapTrap(const ClapTrap &copy);				// copy constructor
-		ClapTrap &operator =(ClapTrap const &a);	// opêrateur d'affectation
+		ClapTrap &operator =(ClapTrap const &assign);	// opêrateur d'affectation
 		~ClapTrap();								// destructeur
 		
 		void attack(const std::string& target);
