@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 20:50:49 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/17 13:48:24 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/17 14:48:30 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	public:
-		ScavTrap();										//default constructor
-		ScavTrap(std::string name);						//name constructor
-		ScavTrap(const ScavTrap &copy);					//copy constructor
-		ScavTrap &operator =(const ScavTrap &assign);	//operateur d'assignation
-		~ScavTrap();									//destructor
-
+		ScavTrap();
+		ScavTrap(std::string name);
+		ScavTrap(const ScavTrap &copy);
+		ScavTrap &operator =(const ScavTrap &assign);
+		~ScavTrap();
+		
 		void attack(const std::string &target);
 		void guardGate();
 };
