@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:24:16 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/17 01:39:55 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/17 01:48:05 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	main()
 {
-	ClapTrap def;				//default
+	ClapTrap def;
 	ClapTrap name("Martine");
 	ClapTrap copy(name);
 	ClapTrap name2("Jeanine");

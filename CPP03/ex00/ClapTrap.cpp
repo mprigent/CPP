@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:45:39 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/17 01:37:10 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/17 02:27:39 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 ClapTrap::ClapTrap() : _name(""), _hit_points(10), _energy(10), _attack_damage(0) 
 {
-	std::cout << std::endl;
-	std::cout << BOLDWHITE;
+	std::cout << std::endl << BOLDWHITE;
 	std::cout << "Default ClapTrap constructor called" << std::endl;
 	std::cout << RESET;
 }
@@ -39,17 +38,9 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
 	_attack_damage = copy.getEnergyPoints();
 }
 
-ClapTrap::~ClapTrap()
-{
-	std::cout << BOLDWHITE;
-	std::cout << "ClapTrap destructor called"<< std::endl;
-	std::cout << RESET;
-}
-
 ClapTrap &ClapTrap::operator =(const ClapTrap &assign)
 {
-	std::cout << std::endl;
-	std::cout << BOLDWHITE;
+	std::cout << std::endl << BOLDWHITE;
 	std::cout << "Assignation ClapTrap operator called" << std::endl;
 	std::cout << RESET;
 	_name = assign.getName();
@@ -57,6 +48,13 @@ ClapTrap &ClapTrap::operator =(const ClapTrap &assign)
 	_energy = assign.getEnergyPoints();
 	_attack_damage = assign.getEnergyPoints();
 	return *this;
+}
+
+ClapTrap::~ClapTrap()
+{
+	std::cout << BOLDWHITE;
+	std::cout << "ClapTrap destructor called"<< std::endl;
+	std::cout << RESET;
 }
 
 std::string ClapTrap::getName() const {
