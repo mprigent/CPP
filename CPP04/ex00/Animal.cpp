@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 16:14:16 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/18 01:20:04 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/18 01:25:33 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Animal::Animal()
 	std::cout << RESET;
 	_type = "A random animal";
 }
+
 Animal::Animal(const Animal &copy)
 {
 	std::cout << BOLDWHITE;
