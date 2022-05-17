@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 20:51:12 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/17 02:28:17 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/17 02:49:43 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	_attack_damage = 20;
 }
 
-ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
+ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy)
 {
 	std::cout << BOLDWHITE;
 	std::cout << "Copy ScavTrap constructor called" << std::endl;
@@ -61,3 +61,24 @@ ScavTrap::~ScavTrap()
 	std::cout << RESET;
 }
 
+void ScavTrap::attack(const std::string &target)
+{
+	if(_hit_points == 0)
+		std::cout << "ScavTrap " << _name << " \033[1m\033[31mcan't attack \033[0mbecause it has 0 hit points..." << std::endl;
+	else if(_energy == 0)
+		std::cout << "ScavTrap " << _name << " \033[1m\033[31mcan't attack \033[0mbecause it has 0 energy points..." << std::endl;
+	else
+	{
+		_energy--;
+		std::cout << "ScavTrap " << _name << " \033[1m\033[35mattacks \033[0m" << target << ", causing " << _attack_damage << " points of damage. It has lost 1 energy point." << std::endl;
+		std::cout << BOLDCYAN;
+		std::cout << "Total of energy points : " << _energy << std::endl;
+		std::cout << RESET << std::endl;
+	}
+}
+void ScavTrap::guardGate()
+{
+	std::cout << BOLDYELLOW;
+	std::cout << "ScavTrap " << _name << " is now in Gate Keeper Mode" << std::endl;
+	std::cout << RESET << std::endl;
+}
