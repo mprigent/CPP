@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 20:51:12 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/17 13:15:22 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:08:51 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ ScavTrap::ScavTrap() : ClapTrap()
 	std::cout << "Default ScavTrap constructor called" << std::endl;
 	std::cout << RESET;
 	_hit_points = 100;
-	_energy = 50;
+	_energy_points = 50;
 	_attack_damage = 20;
 }
 
@@ -28,7 +28,7 @@ ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 	std::cout << "Name ScavTrap constructor called (" << name << ")" << std::endl;
 	std::cout << RESET;
 	_hit_points = 100;
-	_energy = 50;
+	_energy_points = 50;
 	_attack_damage = 20;
 }
 
@@ -46,7 +46,7 @@ ScavTrap &ScavTrap::operator =(const ScavTrap &assign)
 	std::cout << RESET;
 	_name = assign.getName();
 	_hit_points = assign.getHitPoints();
-	_energy = assign.getEnergyPoints();
+	_energy_points = assign.getEnergyPoints();
 	_attack_damage = assign.getEnergyPoints();
 	return *this;
 }
@@ -62,14 +62,14 @@ void ScavTrap::attack(const std::string &target)
 {
 	if(_hit_points == 0)
 		std::cout << "ScavTrap " << _name << " \033[1m\033[31mcan't attack \033[0mbecause it has 0 hit points..." << std::endl;
-	else if(_energy == 0)
+	else if(_energy_points == 0)
 		std::cout << "ScavTrap " << _name << " \033[1m\033[31mcan't attack \033[0mbecause it has 0 energy points..." << std::endl;
 	else
 	{
-		_energy--;
+		_energy_points--;
 		std::cout << "ScavTrap " << _name << " \033[1m\033[35mattacks \033[0m" << target << ", causing " << _attack_damage << " points of damage. It has lost 1 energy point." << std::endl;
 		std::cout << BOLDCYAN;
-		std::cout << "Total of energy points : " << _energy << std::endl;
+		std::cout << "Total of energy points : " << _energy_points << std::endl;
 		std::cout << RESET << std::endl;
 	}
 }

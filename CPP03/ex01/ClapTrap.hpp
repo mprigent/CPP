@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/16 15:45:58 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/17 02:57:49 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:08:51 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ class ClapTrap
 	protected: 
 		std::string		_name;						// passé en paramètre d’un constructeur
 		unsigned int	_hit_points;				// points de vie
-		unsigned int	_energy;					// points d’énergie
+		unsigned int	_energy_points;					// points d’énergie
 		unsigned int	_attack_damage;				// dommages infligés en attaquant
 
 	public:

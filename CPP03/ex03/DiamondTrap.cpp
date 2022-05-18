@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 14:07:18 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/17 15:40:32 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/18 19:08:51 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ DiamondTrap::DiamondTrap() : ClapTrap("_clap_name"), FragTrap(), ScavTrap()
 	std::cout << "Default DiamondTrap constructor called" << std::endl;
 	std::cout << RESET;
 	_hit_points = 100;
-	_energy = 50;
+	_energy_points = 50;
 	_attack_damage = 30;
 }
 
@@ -28,7 +28,7 @@ DiamondTrap::DiamondTrap(std::string name) : ClapTrap(name + "_clap_name"), Frag
 	std::cout << "Name DiamondTrap constructor called (" << name << ")" << std::endl;
 	std::cout << RESET;
 	_hit_points = 100;
-	_energy = 50;
+	_energy_points = 50;
 	_attack_damage = 30;
 }
 
@@ -39,7 +39,7 @@ DiamondTrap::DiamondTrap(const DiamondTrap &copy) : ClapTrap(copy), FragTrap(cop
 	std::cout << RESET;
 	_name = copy.getName();
 	_hit_points = copy.getHitPoints();
-	_energy = copy.getEnergyPoints();
+	_energy_points = copy.getEnergyPoints();
 	_attack_damage = copy.getEnergyPoints();
 }
 
@@ -50,7 +50,7 @@ DiamondTrap &DiamondTrap::operator =(const DiamondTrap &assign)
 	std::cout << RESET;
 	_name = assign.getName();
 	_hit_points = assign.getHitPoints();
-	_energy = assign.getEnergyPoints();
+	_energy_points = assign.getEnergyPoints();
 	_attack_damage = assign.getEnergyPoints();
 	return *this;
 }
@@ -73,6 +73,6 @@ void DiamondTrap::attack(std::string target)
 
 void DiamondTrap::whoAmI()
 {
-	std::cout << "Hi ! \033[1m\033[32mI am the DiamondTrap\033[0m " << _name << ", but my ClapTrap name is " << ClapTrap::_name << "" << std::endl;
+	std::cout << "Hi ! \033[1m\033[32mI am the DiamondTrap\033[0m " << _name << ", but my ClapTrap name is \033[1m\033[32m" << ClapTrap::_name << "\033[0m" << std::endl;
 	std::cout << RESET << std::endl;
 }
