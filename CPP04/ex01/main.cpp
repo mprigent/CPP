@@ -6,14 +6,13 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:44:05 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/19 19:36:15 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/19 20:38:20 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
 int main() 
@@ -93,5 +92,53 @@ int main()
     std::cout << std::endl << BOLDRED << "Destructor : " << RESET << std::endl;
     delete w_cat;
 
-	return 0; 
+	/* =============================== 5 DOG TEST =============================== */
+	
+	std::cout << std::endl << BOLDGREEN << "Construction of 5 dogs :" << std::endl;
+    
+	Animal *(tab[10]);
+	for (int i = 0; i < 5; i++)
+	{
+		std::cout << BOLDWHITE << std::endl;
+		tab[i] = new Dog();
+	}
+	std::cout << RESET;
+
+	/* =============================== 5 CAT TEST =============================== */
+	
+	std::cout << std::endl << BOLDGREEN << "Construction of 5 cats :" << RESET << std::endl;
+	for (int i = 5; i < 10; i++)
+	{
+		std::cout << BOLDWHITE << std::endl;
+		tab[i] = new Cat();
+	}
+
+	/* =============================== GET TYPE TEST =============================== */
+	
+	std::cout << std::endl << BOLDGREEN << "Call of getType :" << RESET << std::endl << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << "Array[" << i << "] : " << tab[i]->getType() << std::endl;
+	}
+
+	/* =============================== MAKE SOUND TEST =============================== */
+	
+	std::cout << std::endl << BOLDGREEN << "Call of makeSound :" << RESET << std::endl << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << "Array[" << i << "] : ";
+		tab[i]->makeSound();
+	}
+
+	/* =============================== DESTRUCTOR TEST =============================== */
+	
+	std::cout << std::endl << BOLDRED << "Destruction of Array :" << RESET << std::endl << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << GREEN << "Array[" << i << "] : " << RESET << std::endl;
+		delete tab[i];
+		std::cout << std::endl;
+	}
+
+	return 0;
 }

@@ -6,14 +6,13 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:44:05 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/19 19:36:15 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/19 19:42:52 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
 
 int main() 

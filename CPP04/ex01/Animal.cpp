@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 16:14:16 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/19 13:32:33 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/19 20:37:22 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ Animal &Animal::operator =(const Animal &assign)
 }
 
 Animal::~Animal(){
-	std::cout << "Animal Destructor called" << std::endl;
+	std::cout << BOLDWHITE << "Animal Destructor called" << RESET << std::endl;
 }
 
 std::string	Animal::getType() const  {
