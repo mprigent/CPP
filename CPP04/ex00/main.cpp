@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:44:05 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/19 19:42:52 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/19 20:43:27 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,11 @@ int main()
 {
 	/* =============================== ANIMAL TEST =============================== */
 	
-	std::cout << std::endl << BOLDWHITE << "----- ANIMAL -----" << RESET << std::endl << std::endl;
+	std::cout << std::endl << BOLDMAGENTA << "----- ANIMAL -----" << RESET << std::endl << std::endl;
 	std::cout << BOLDGREEN << "Constructor : " << RESET << std::endl;
 	const Animal *meta = new Animal();
 
-	std::cout << std::endl << BOLDWHITE << "Call of getType   : " << RESET;
-	std::cout << meta->getType() << std::endl;
+	std::cout << std::endl << BOLDWHITE << "Call of getType   : " << RESET << meta->getType() << std::endl;
 	
     std::cout << BOLDWHITE << "Call of makeSound : " << RESET;
     meta->makeSound();
@@ -38,8 +37,7 @@ int main()
 	std::cout << GREEN << "Constructor : " << RESET << std::endl;
 	const Animal *dog = new Dog();
 
-	std::cout << std::endl << BOLDWHITE << "Call of getType   : " << RESET;
-	std::cout << dog->getType() << std::endl;
+	std::cout << std::endl << BOLDWHITE << "Call of getType   : " << RESET << dog->getType() << std::endl;
 
 	std::cout << BOLDWHITE << "Call of makeSound : " << RESET;
 	dog->makeSound();
@@ -53,8 +51,7 @@ int main()
     std::cout << GREEN << "Constructor : " << RESET << std::endl;
     const Animal *cat = new Cat();
     
-    std::cout << std::endl << BOLDWHITE << "Call of getType   : " << RESET;
-    std::cout << cat->getType() << std::endl;
+    std::cout << std::endl << BOLDWHITE << "Call of getType   : " << RESET << cat->getType() << std::endl;
     
     std::cout << BOLDWHITE << "Call of makeSound : " << RESET;
     cat->makeSound();
@@ -68,8 +65,7 @@ int main()
     std::cout << GREEN << "Constructor : " << RESET << std::endl;
     const WrongAnimal *wani = new WrongAnimal();
     
-    std::cout << std::endl << BOLDWHITE << "Call of getType   : " << RESET;
-    std::cout << wani->getType() << std::endl;
+    std::cout << std::endl << BOLDWHITE << "Call of getType   : " << RESET << wani->getType() << std::endl;
     
     std::cout << BOLDWHITE << "Call of makeSound : " << RESET;
     wani->makeSound();
@@ -83,8 +79,7 @@ int main()
     std::cout << GREEN << "Constructor : " << RESET << std::endl;
     const WrongAnimal *w_cat = new WrongCat();
     
-    std::cout << std::endl << BOLDWHITE << "Call of getType   : " << RESET;
-    std::cout << w_cat->getType() << std::endl;
+    std::cout << std::endl << BOLDWHITE << "Call of getType   : " << RESET << w_cat->getType() << std::endl;
     
     std::cout << BOLDWHITE << "Call of makeSound : " << RESET;
     w_cat->makeSound();
