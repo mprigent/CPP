@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:44:05 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/19 13:27:10 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/19 19:36:15 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int main()
 
 	/* =============================== DOG TEST =============================== */
 
-	std::cout << std::endl << BOLDWHITE << "----- DOG -----" << RESET << std::endl << std::endl;
+	std::cout << std::endl << BOLDYELLOW << "----- DOG -----" << RESET << std::endl << std::endl;
 	std::cout << GREEN << "Constructor : " << RESET << std::endl;
 	const Animal *dog = new Dog();
 
@@ -50,7 +50,7 @@ int main()
 
 	/* =============================== CAT TEST =============================== */
 	
-    std::cout << std::endl << BOLDWHITE << "----- CAT -----" << std::endl << std::endl;
+    std::cout << std::endl << BOLDCYAN << "----- CAT -----" << std::endl << std::endl;
     std::cout << GREEN << "Constructor : " << RESET << std::endl;
     const Animal *cat = new Cat();
     
@@ -65,7 +65,7 @@ int main()
 
 	/* =============================== WRONG ANIMAL TEST =============================== */
 
-    std::cout << std::endl << BOLDWHITE  "----- WRONG ANIMAL -----" << std::endl << std::endl;
+    std::cout << std::endl << BOLDMAGENTA  "----- WRONG ANIMAL -----" << std::endl << std::endl;
     std::cout << GREEN << "Constructor : " << RESET << std::endl;
     const WrongAnimal *wani = new WrongAnimal();
     
@@ -80,7 +80,7 @@ int main()
 
 	/* =============================== WRONG CAT TEST =============================== */
 	
-    std::cout << std::endl << BOLDWHITE << "----- WRONG CAT -----" << std::endl << std::endl;
+    std::cout << std::endl << BOLDCYAN << "----- WRONG CAT -----" << std::endl << std::endl;
     std::cout << GREEN << "Constructor : " << RESET << std::endl;
     const WrongAnimal *w_cat = new WrongCat();
     

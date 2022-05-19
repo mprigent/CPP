@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 01:03:32 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/18 20:00:26 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/19 19:38:00 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 WrongCat::WrongCat()
 {
 	std::cout << "Default WrongCat constructor called" << std::endl;
-	_type = "WrongCat";
+	_type = "\033[1m\033[36mWrongCat\033[0m";
 }
 
 WrongCat::WrongCat(const WrongCat &copy)

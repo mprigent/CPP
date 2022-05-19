@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 00:45:57 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/19 13:33:01 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/19 19:36:54 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Dog::Dog()
 {
 	std::cout << "Default Dog constructor called" << std::endl;
-	_type = "\033[1m\033[33mDog";
+	_type = "\033[1m\033[33mDog\033[0m";
 }
 
 Dog::Dog(const Dog &copy)

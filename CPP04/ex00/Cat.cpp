@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 16:15:20 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/18 19:55:20 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/19 19:37:20 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Cat::Cat()
 {
 	std::cout << "Default Cat constructor called" << std::endl;
-	_type = "Cat";
+	_type = "\033[1m\033[36mCat\033[0m";
 }
 
 Cat::Cat(const Cat &copy)
