@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 16:14:26 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/18 01:19:59 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/19 21:02:48 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ class Animal
 		Animal &operator =(const Animal &assign);
 		virtual ~Animal();
 		std::string	getType() const;
-		virtual void makeSound() const;
+		virtual void makeSound() const = 0;
 };
 
 #endif
