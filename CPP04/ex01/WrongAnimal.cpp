@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 00:59:10 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/18 01:19:37 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:36:00 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 WrongAnimal::WrongAnimal()
 {
-	std::cout << BOLDWHITE;
 	std::cout << "Default WrongAnimal constructor called" << std::endl;
-	std::cout << RESET;
-	_type = "A random WrongAnimal";
+	_type = "\033[1m\033[35mA random WrongAnimal\033[0m";
 }
 
 WrongAnimal::WrongAnimal(const WrongAnimal &copy)
 {
-	std::cout << BOLDWHITE;
 	std::cout << "Copy WrongAnimal constructor called" << std::endl;
-	std::cout << RESET;
 	_type = copy.getType();
 }
 
@@ -34,18 +30,14 @@ WrongAnimal &WrongAnimal::operator =(const WrongAnimal &assign)
 	return *this;
 }
 
-WrongAnimal::~WrongAnimal()
-{
-	std::cout << BOLDWHITE;
+WrongAnimal::~WrongAnimal() {
 	std::cout << "WrongAnimal Destructor called" << std::endl;
-	std::cout << RESET;
 }
 
 std::string	WrongAnimal::getType() const{
 	return _type;
 }
 
-void WrongAnimal::makeSound() const
-{
-	std::cout << "* ANIMAL SOUND *" << std::endl;
+void WrongAnimal::makeSound() const {
+	std::cout << BOLDMAGENTA << "* ANIMAL SOUND *" << RESET << std::endl;
 }

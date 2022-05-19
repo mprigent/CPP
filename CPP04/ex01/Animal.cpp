@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 16:14:16 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/18 01:25:33 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/19 13:32:33 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,13 @@
 
 Animal::Animal()
 {
-	std::cout << BOLDWHITE;
 	std::cout << "Default Animal constructor called" << std::endl;
-	std::cout << RESET;
-	_type = "A random animal";
+	_type = "\033[1m\033[35mA random animal\033[0m";
 }
 
 Animal::Animal(const Animal &copy)
 {
-	std::cout << BOLDWHITE;
 	std::cout << "Copy Animal constructor called" << std::endl;
-	std::cout << RESET;
 	_type = copy.getType();
 }
 
@@ -34,18 +30,14 @@ Animal &Animal::operator =(const Animal &assign)
 	return *this;
 }
 
-Animal::~Animal()
-{
-	std::cout << BOLDWHITE;
+Animal::~Animal(){
 	std::cout << "Animal Destructor called" << std::endl;
-	std::cout << RESET;
 }
 
-std::string	Animal::getType() const{
+std::string	Animal::getType() const  {
 	return _type;
 }
 
-void Animal::makeSound() const
-{
-	std::cout << "* ANIMAL SOUND *" << std::endl;
+void Animal::makeSound() const {
+	std::cout << BOLDMAGENTA << "* ANIMAL SOUND *" << RESET << std::endl;
 }
