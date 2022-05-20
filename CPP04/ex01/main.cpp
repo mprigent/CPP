@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 15:44:05 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/19 20:44:23 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/20 21:17:08 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,5 +135,16 @@ int main()
 		std::cout << std::endl;
 	}
 
+	/* =============================== DEEP COPY TEST =============================== */
+
+	std::cout << std::endl << BOLDCYAN << "----- DEEP COPY -----" << RESET << std::endl << std::endl;
+	
+	Cat cat1 = Cat();
+	Cat cat2 = Cat();
+	std::cout << std::endl << BOLDWHITE << "Adress of cat2 : " << RESET << BOLDCYAN << &cat2 << RESET << std::endl << std::endl;
+	cat1 = cat2;
+	std::cout << std::endl << BOLDWHITE << "Adress of cat1 : " << RESET << BOLDGREEN << &cat1 << RESET << std::endl;
+	std::cout << BOLDWHITE << "Adress of cat2 : " << RESET << BOLDCYAN << &cat2 << RESET << std::endl << std::endl;
+	
 	return 0;
 }

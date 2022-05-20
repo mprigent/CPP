@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 00:45:57 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/19 20:45:56 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/20 20:58:28 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,19 @@ Dog::Dog() : _brain(new Brain())
 	_type = "\033[1m\033[33mDog\033[0m";
 }
 
-Dog::Dog(const Dog &copy) : _brain(new Brain(*copy._brain))
+Dog::Dog(const Dog &copy) : _brain(new Brain(*copy._brain))	//copie profonde (cree une nouvelle adresse)
 {
 	std::cout << "Copy Dog constructor called" << std::endl;
 	_type = copy.getType();
+}
+
+Dog &Dog::operator =(const Dog &assign)						//copie profonde (cree une nouvelle adresse)
+{
+	std::cout << "Assignation Dog operator called" << std::endl;
+	_type = assign.getType();
+	delete _brain;
+	this->_brain = new Brain (*assign._brain);
+	return *this;
 }
 
 Dog::~Dog() {

@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 16:15:20 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/19 19:37:20 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/20 20:55:10 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ Cat::Cat(const Cat &copy)
 {
 	std::cout << "Copy Cat constructor called" << std::endl;
 	_type = copy.getType();
+}
+
+Cat &Cat::operator =(const Cat &assign)
+{
+	std::cout << "Assignation Cat operator called" << std::endl;
+	this->_type = assign._type;
+	return (*this);
 }
 
 Cat::~Cat() {

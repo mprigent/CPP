@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 01:03:32 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/19 19:38:00 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/20 20:54:32 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ WrongCat::WrongCat(const WrongCat &copy)
 {
 	std::cout << "Copy WrongCat constructor called" << std::endl;
 	_type = copy.getType();
+}
+
+WrongCat &WrongCat::operator =(const WrongCat &assign)
+{
+	std::cout << "Assignation WrongCat operator called" << std::endl;
+	this->_type = assign._type;
+	return (*this);
 }
 
 WrongCat::~WrongCat() {

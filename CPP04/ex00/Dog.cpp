@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/18 00:45:57 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/19 19:36:54 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/20 20:55:30 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,13 @@ Dog::Dog(const Dog &copy)
 {
 	std::cout << "Copy Dog constructor called" << std::endl;
 	_type = copy.getType();
+}
+
+Dog &Dog::operator =(const Dog &assign)
+{
+	std::cout << "Assignation Dog operator called" << std::endl;
+	this->_type = assign._type;
+	return (*this);
 }
 
 Dog::~Dog() {
