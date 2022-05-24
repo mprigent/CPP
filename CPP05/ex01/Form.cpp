@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 15:22:56 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/24 17:35:11 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 01:17:31 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Form::Form(std::string name, const int signGrade, const int execGrade) : _name(n
 		throw Form::GradeTooHighException();
 	if (signGrade > 150 || execGrade > 150)
 		throw Form::GradeTooLowException();
-	std::cout << "Form " << _name << " created with grade " << _signGrade << " and " << this->_execGrade << std::endl;
+	std::cout << BOLDGREEN << "Form " << _name << " created with grade " << _signGrade << " and " << this->_execGrade << RESET << std::endl;
 }
 
 Form::Form(const Form &copy): _name(copy.getName()), _signGrade(copy.getGradeToSign()), _execGrade(copy.getGradeToExecute())
@@ -28,7 +28,7 @@ Form::Form(const Form &copy): _name(copy.getName()), _signGrade(copy.getGradeToS
 }
 
 Form::~Form() {
-	std::cout << "Form " << _name << " has been destroyed" << std::endl;
+	std::cout << BOLDRED << "Form " << _name << " has been destroyed" << RESET;
 }
 
 Form &Form::operator =(const Form &assign)
@@ -69,13 +69,13 @@ void Form::beSigned(Bureaucrat bureaucrat)
 		_signed = true;
 	else
 	{
-		std::cout << bureaucrat.getName() << " couldn't sign " << std::endl;
+		std::cout << BOLDWHITE << bureaucrat.getName() << " couldn't sign " << RESET << std::endl;
 		throw Form::GradeTooLowException();
 	}
 }
 
 std::ostream &operator<<(std::ostream &stream, Form const &form)
 {
-	stream << "Form " << form.getName() << " with grade " << form.getGradeToSign() << " and " << form.getGradeToExecute() << std::endl;
+	stream << "Form " << BOLDCYAN << form.getName() << RESET << " with grade " << BOLDGREEN << form.getGradeToSign() << RESET << " and " << BOLDGREEN << form.getGradeToExecute() << RESET << std::endl;
 	return stream;
 }

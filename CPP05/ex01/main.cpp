@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:25:27 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/24 17:16:28 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 01:19:17 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,101 +15,80 @@
 
 int main(void)
 {
-    std::cout << std::endl << GREEN << "Constructor : " << YELLOW << std::endl;
-    Bureaucrat c("john", 149);
+	/* =============================== EXCEPTIONS TEST =============================== */
 
-    std::cout << std::endl << MAGENTA << "Call of decrementGrade" << YELLOW << " using a try and catch"<< RESET << std::endl;
-    
-    try {
-        c.decrementGrade();
-    }
-    catch (std::exception &e) {
-        std::cerr << RED << "Output of Exception:  " << RESET << e.what() << std::endl;
-    }
-
-    std::cout << std::endl << MAGENTA << "Creation of 151-sign | 130-exec form" << YELLOW << " using a try and catch : "<< RESET << std::endl;
-    
-    try {
-        Form("johhny", 151, 130);
-    }
-    catch (std::exception &e) {
-        std::cerr << RED << "Output of Exception:  " << RESET << e.what() << std::endl;
-    }
-    std::cout << std::endl << MAGENTA << "Creation of 3-sign | 12-exec form" << YELLOW << " using a try and catch : "<< RESET << std::endl;
-    
-    try {
-        Form form1("johhny", 3, 12);
-        std::cout << std::endl << MAGENTA << "Use of overloader : " << RESET;
-        std::cout << form1 << std::endl;
-    }
-    catch (std::exception &e) {
-        std::cerr << RED << "Output of Exception:  " << RESET << e.what() << std::endl;
-    }
-    std::cout << "-----------------------------"<< std::endl;
-    std::cout << std::endl << MAGENTA << "Creation bureaucrat john lvl3" << YELLOW << " using a try and catch : "<< RESET << std::endl;
-    Bureaucrat john("john",3);
-    std::cout << std::endl << MAGENTA << "Creation of 3-sign | 12-exec form" << YELLOW << " using a try and catch : "<< RESET << std::endl;
-    
-    Form form1("form1", 3, 12);
-    try {
-        std::cout << std::endl << MAGENTA << "Use of beSigned with john : " << RESET;
-        form1.beSigned(john);
-    }
-    catch (std::exception &e) {
-        std::cerr << RED << "Output of Exception:  " << RESET << e.what() << std::endl;
-    }
-    std::cout << "-----------------------------"<< std::endl;
-
-
-    std::cout << "-----------------------------"<< std::endl;
-    std::cout << std::endl << MAGENTA << "Creation bureaucrat dann lvl2" << YELLOW << " using a try and catch : "<< RESET << std::endl;
-    Bureaucrat dann("dann",2);
-    std::cout << std::endl << MAGENTA << "Creation of 3-sign | 12-exec form" << YELLOW << " using a try and catch : "<< RESET << std::endl;
-    
-    Form form2("form2", 3, 12);
-    try {
-        std::cout << std::endl << MAGENTA << "Use of beSigned with dann " << RESET;
-        form2.beSigned(dann);
-    }
-    catch (std::exception &e) {
-        std::cerr << RED << "Output of Exception:  " << RESET << e.what() << std::endl;
-    }
-    std::cout << std::endl << std::endl << "-----------------------------"<< std::endl;
-
-    std::cout << "-----------------------------"<< std::endl;
-    std::cout << std::endl << MAGENTA << "Creation bureaucrat dann lvl3" << YELLOW << " using a try and catch : "<< RESET << std::endl;
-    Bureaucrat dany("dany",2);
-    std::cout << std::endl << MAGENTA << "Creation of 3-sign | 12-exec form" << YELLOW << " using a try and catch : "<< RESET << std::endl;
-    
-    Form form3("form3", 3, 12);
-    try {
-        std::cout << std::endl << MAGENTA << "Use of signForm with dany : " << RESET;
-        std::cout << std::endl;
-        dany.signForm(form3);
-    }
-    catch (std::exception &e) {
-        std::cerr << RED << "Output of Exception:  " << RESET << e.what() << std::endl;
-    }
-    std::cout << std::endl << std::endl << "-----------------------------"<< std::endl;
-
-    std::cout << "-----------------------------"<< std::endl;
-    std::cout << std::endl << MAGENTA << "Creation bureaucrat dann lvl3" << YELLOW << " using a try and catch : "<< RESET << std::endl;
-    Bureaucrat daniel("dany",2);
-    std::cout << std::endl << MAGENTA << "Creation of 1-sign | 12-exec form" << YELLOW << " using a try and catch : "<< RESET << std::endl;
-    
-    Form form4("form4", 1, 12);
-    try {
-        std::cout << std::endl << MAGENTA << "Use of signForm with dany : " << RESET;
-        std::cout << std::endl;
-        daniel.signForm(form4);
-    }
-    catch (std::exception &e) {
-        std::cerr << RED << "Output of Exception:  " << RESET << e.what() << std::endl;
-    }
-    std::cout << std::endl << std::endl << "-----------------------------"<< std::endl;
-    std::cout << std::endl << std::endl << " Destructor :"<< std::endl;
-
-    std::cout << std::endl;
+	std::cout << std::endl << "----- EXCEPTIONS -----" << std::endl << std::endl;
 	
-    return (0);
+	std::cout << std::endl << BOLDWHITE << "Form creation, lvl : " << BOLDCYAN << "151 sign | 130 exec" << BOLDYELLOW << " using a try and catch : "<< RESET << std::endl;
+	try {
+		Form("Bernard", 151, 130);
+	}
+	catch (std::exception &e) {
+		std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
+	}
+
+	/* =============================== OPERATOR OVERLOAD TEST =============================== */
+
+	std::cout << std::endl << std::endl << "----- OPERATOR OVERLOAD -----" << std::endl << std::endl;
+
+	std::cout << std::endl << BOLDWHITE << "Form creation, lvl : " << BOLDCYAN << "21 sign | 42 exec" << BOLDYELLOW << " using a try and catch : "<< RESET << std::endl;
+	try {
+	Form form1("Bernard", 21, 42);
+		std::cout << std::endl << BOLDWHITE << "Overload : " << RESET << form1 << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
+	}
+
+	/* =============================== BE SIGNED TEST =============================== */
+
+	std::cout << std::endl << std::endl << std::endl << "----- BE SIGNED -----" << std::endl << std::endl << std::endl;
+
+	Bureaucrat b("Bernard", 3);
+	
+	std::cout << std::endl << BOLDWHITE << "Form creation, lvl : " << BOLDCYAN << "3 sign | 12 exec" << BOLDYELLOW << " using a try and catch : "<< RESET << std::endl;
+	Form form1("form 1", 3, 12);
+	try {
+		std::cout << std::endl << BOLDMAGENTA << "Use of beSigned with Bernard : " << RESET;
+		form1.beSigned(b);
+	}
+	catch (std::exception &e) {
+		std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
+	}
+
+	/* =============================== SIGN FORM TEST =============================== */
+
+	std::cout << std::endl << std::endl << "----- SIGN FORM -----" << std::endl << std::endl << std::endl;
+
+	Bureaucrat d("Donatien",2);
+	
+	std::cout << std::endl << BOLDWHITE << "Form creation, lvl : " << BOLDCYAN << "3 sign | 12 exec" << BOLDYELLOW << " using a try and catch : "<< RESET << std::endl;
+	Form form3("form 3", 3, 12);
+	try {
+		std::cout << std::endl << BOLDMAGENTA << "Use of signForm with Donatien : " << RESET;
+		d.signForm(form3);
+	}
+	catch (std::exception &e) {
+		std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
+	}
+
+	/* =============================== SIGN FORM TEST - LOW GRADE =============================== */
+
+	std::cout << std::endl << std::endl << "----- SIGN FORM - LOW GRADE -----" << std::endl << std::endl;
+	
+    Bureaucrat d2("Donatien", 2);
+
+	std::cout << std::endl << BOLDWHITE << "Form creation, lvl : " << BOLDCYAN << "1 sign | 12 exec" << BOLDYELLOW << " using a try and catch : "<< RESET << std::endl;
+	Form form4("form 4", 1, 12);
+	try {
+		std::cout << std::endl << BOLDMAGENTA << "Use of signForm with Donatien : " << RESET;
+		d2.signForm(form4);
+	}
+	catch (std::exception &e) {
+		std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
+	}
+	
+	std::cout << std::endl << std::endl << "----- DESTRUCTORS -----" << std::endl << std::endl << std::endl;
+
+	return (0);
 }

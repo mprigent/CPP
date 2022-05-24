@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:25:27 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/24 22:28:41 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/24 22:37:19 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 int main(void)
 {
-	/* =============================== INCREMENT GRADE TEST =============================== */
-
 	std::cout << std::endl << BOLDWHITE << "----- BUREAUCRAT -----" << RESET << std::endl << std::endl;
 	
 	std::cout << BOLDGREEN << "Constructor : " << RESET << std::endl;
 	Bureaucrat b("Bernard", 149);
+
+	/* =============================== INCREMENT GRADE TEST =============================== */
 
 	std::cout << std::endl << std::endl << "----- INCREMENT GRADE -----" << std::endl << std::endl;
 	
