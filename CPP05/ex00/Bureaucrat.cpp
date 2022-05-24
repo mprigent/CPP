@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:20:51 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/24 15:11:58 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/24 22:31:32 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)	// defau
 		throw Bureaucrat::GradeTooLowException();
 	else
 		_grade = grade;
-	std::cout << "Bureaucrat " << _name << " created with grade " << _grade << std::endl;
+	std::cout << BOLDGREEN << "Bureaucrat " << _name << " created with grade " << _grade << RESET << std::endl;
 }
 
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName()), _grade(copy.getGrade())	// copy constructor
@@ -30,7 +30,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName()), _grade(c
 }
 
 Bureaucrat::~Bureaucrat(){												// destructor
-	std::cout << "Bureaucrat " << _name << " has been destroyed" << std::endl;
+	std::cout << BOLDRED << "Bureaucrat " << _name << " has been destroyed" << RESET << std::endl << std::endl;
 }
 
 Bureaucrat & Bureaucrat::operator =(const Bureaucrat &assign)			// operateur d'affectation
@@ -65,6 +65,6 @@ void Bureaucrat::decrementGrade()
 
 std::ostream &operator <<(std::ostream &stream, Bureaucrat const &bureaucrat)
 {
-	stream << "" << bureaucrat.getName() << ", bureaucrat grade " << bureaucrat.getGrade() << "";
+	stream << BOLDGREEN << bureaucrat.getName() << RESET << " , bureaucrat grade " << BOLDGREEN << bureaucrat.getGrade();
 	return stream;
 }
