@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 15:22:56 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 21:30:14 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 22:52:02 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ void Form::beSigned(Bureaucrat bureaucrat)
 {
 	if (_signed)
 	{
-		std::cout << "Output of Exception :  " << bureaucrat.getName() << " couldn't sign " << std::endl;
+		std::cout << BOLDWHITE << "Output of Exception :  " << BOLDRED << bureaucrat.getName() << " couldn't sign " << RESET << std::endl;
 		throw Form::AlreadySignedException();
 	}
 	if (bureaucrat.getGrade() <= _signGrade)
@@ -76,6 +76,6 @@ void Form::beSigned(Bureaucrat bureaucrat)
 
 std::ostream &operator<<(std::ostream &stream, Form const &form)
 {
-	stream << "Form " << BOLDCYAN << form.getName() << RESET << " with grade " << BOLDCYAN << form.getGradeToSign() << RESET << " and " << BOLDCYAN << form.getGradeToExecute() << RESET << std::endl;
+	stream << "Form " << BOLDCYAN << form.getName() << RESET << " with grade " << BOLDCYAN << form.getGradeToSign() << RESET << " and " << BOLDCYAN << form.getGradeToExecute() << RESET << std::endl << std::endl;
 	return stream;
 }

@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:06:15 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 21:38:00 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 22:46:56 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form("ShrubberyCreationForm", 145, 137) 
 {
 	_target = target;
-	std::cout << "ShrubberyCreationForm constructor called" << std::endl;
+	std::cout << std::endl << BOLDGREEN << "ShrubberyCreationForm constructor called" << RESET << std::endl;
 }
 
 ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &copy) : Form(copy)
@@ -32,7 +32,7 @@ ShrubberyCreationForm &ShrubberyCreationForm::operator =(const ShrubberyCreation
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {
-	std::cout << "ShrubberyCreationForm destructor called" << std::endl;
+	std::cout << std::endl << BOLDRED << "ShrubberyCreationForm destructor called" << RESET << std::endl;
 }
 
 std::string ShrubberyCreationForm::getTarget() const {
@@ -49,7 +49,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &copy) const
 		throw Form::GradeTooLowException();
 	}
 	
-	std::cout << copy.getName() + " executes " + _name + " and create " + _target + "_shrubbery file" << std::endl;
+	std::cout << copy.getName() + " executes " + _name + " and create " BOLDYELLOW + _target + "_shrubbery " RESET "file" << std::endl;
 	
 	file.open(_target + "_shrubbery", std::fstream::out);
 	if (!file)
@@ -60,6 +60,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &copy) const
 
 	if (file.is_open())
 	{
+		file << std::endl;
 		file << "     *         ,@@@@@@@,     " << std::endl;
 		file << "       ,,,.   ,@@@@@@/@@,  .oo8888o.    *" << std::endl;
 		file << "    ,&%%&%&&%,@@@@@/@@@@@@,8888\\88/8o" << std::endl;
@@ -72,7 +73,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &copy) const
 		file << "    \\/ ._\\//_/__/  ,\\_//__\\/.  \\_//__/_" << std::endl;
 		file << std::endl;
 	
-	std::cout << "Check the file !" << std::endl;
+	std::cout << BOLDYELLOW << "Check the file !" << RESET << std::endl;
 
 	file.close();
 	}

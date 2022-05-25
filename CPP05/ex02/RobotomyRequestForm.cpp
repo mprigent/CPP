@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:06:54 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 21:38:00 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 22:50:36 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 RobotomyRequestForm::RobotomyRequestForm(std:: string target) : Form("RobotomyRequestForm", 72, 45)
 {
-	std::cout << "RobotomyRequestForm constructor called" << std::endl;
+	std::cout << std::endl << BOLDGREEN << "RobotomyRequestForm constructor called" << RESET << std::endl;
 	_target = target;
 	srand(time(NULL));
 }
@@ -34,7 +34,7 @@ RobotomyRequestForm &RobotomyRequestForm::operator =(const RobotomyRequestForm &
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {
-	std::cout << "RobotomyRequestForm destructor called" << std::endl;
+	std::cout << std::endl << BOLDRED << "RobotomyRequestForm destructor called" << RESET << std::endl;
 }
 
 std::string RobotomyRequestForm::getTarget() const{
@@ -51,16 +51,10 @@ void RobotomyRequestForm::execute(Bureaucrat const &copy) const
 
 	std::cout << copy.getName() + " executes " + _name << std::endl;
 	
-	std::cout << "* BSSSSI.........BSIIII..........BSZII *" << std::endl;
+	std::cout << std::endl << BOLDYELLOW << "* BSSSSI.........BSIIII..........BSZII *" << RESET << std::endl;
 	srand(time(NULL));
 	if(rand() % 2 == 0)
-		std::cout << _target << " was robotomized ! " << std::endl;
+		std::cout << BOLDYELLOW << _target << " was robotomized ! " << RESET << std::endl;
 	else
-		std::cout << "The robotization failed !" << std::endl;
-}
-
-std::ostream &operator <<(std::ostream &os, const RobotomyRequestForm &robot)
-{
-	os << "Form " << robot.getName() << " with grade " << robot.getGradeToSign() << " and " << robot.getGradeToExecute() << std::endl;
-	return os;
+		std::cout << BOLDYELLOW << "The robotization failed !" << RESET << std::endl;
 }

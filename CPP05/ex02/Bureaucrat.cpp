@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:20:51 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 21:41:54 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 22:33:59 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName()), _grade(c
 }
 
 Bureaucrat::~Bureaucrat(){												// destructor
-	std::cout << BOLDRED << "Bureaucrat " << _name << " has been destroyed" << RESET << std::endl;
+	std::cout << std::endl << BOLDRED << "Bureaucrat " << _name << " has been destroyed" << RESET << std::endl;
 }
 
 Bureaucrat & Bureaucrat::operator =(const Bureaucrat &assign)			// operateur d'affectation

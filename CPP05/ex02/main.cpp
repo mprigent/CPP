@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:25:27 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 21:54:29 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 22:51:00 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,103 +19,114 @@
 
 int main(void) {
 	
-	/* =============================== SHRUBBERY CREATION FORM TEST =============================== */
+	/* =============================== SHRUBBERY CREATION FORM TEST - ALREADY SIGNED =============================== */
 
-	std::cout << std::endl << "----- SHRUBBERY CREATION FORM -----" << std::endl << std::endl;
+	std::cout << std::endl << "----- SHRUBBERY CREATION FORM - ALREADY SIGNED -----" << std::endl << std::endl;
 
 	Bureaucrat b("Bernard", 3);
+	
 	std::cout << std::endl << BOLDWHITE << "Creation of ShrubberyCreationForm" << BOLDYELLOW << " using a try and catch : "<< RESET << std::endl;
 
-    ShrubberyCreationForm form1("form1");
-    std::cout << std::endl << BOLDWHITE << "getSignGrade : " << RESET << form1.getGradeToSign();
-    std::cout << std::endl << BOLDWHITE << "getExecGrade : " << RESET << form1.getGradeToExecute() << std::endl;
-    try {
+	ShrubberyCreationForm form1("form1");
+	std::cout << std::endl << BOLDWHITE << "getSignGrade : " << BOLDCYAN << form1.getGradeToSign();
+	std::cout << std::endl << BOLDWHITE << "getExecGrade : " << BOLDCYAN << form1.getGradeToExecute() << std::endl;
+	try {
 		std::cout << std::endl << BOLDMAGENTA << "Use of beSigned with Bernard : " << RESET;
 		form1.beSigned(b);
 		std::cout << std::endl << BOLDWHITE << "Overload : " << RESET << form1 << std::endl;
-		std::cout << std::endl << BOLDMAGENTA << "Use of beSigned with Bernard : " << RESET;
+		std::cout << BOLDMAGENTA << "Use of beSigned with Bernard : " << RESET;
 		form1.beSigned(b);
 	}
 	catch (std::exception &e) {
 		std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
 	}
 	
-    try {
-		std::cout << std::endl << MAGENTA << "Use of execute with Bernard." << std::endl << RESET;
+	/* =============================== EXECUTE SHRUBBERY CREATION FORM TEST =============================== */
+
+	std::cout << std::endl << std::endl << "----- EXECUTE SHRUBBERY CREATION FORM -----" << std::endl << std::endl;
+	
+	try {
+		std::cout << std::endl << BOLDMAGENTA << "Use of execute with Bernard : " << RESET;
 		b.executeForm(form1);
-        std::cout << std::endl << BOLDWHITE << "Overload : " << RESET << form1 << std::endl;
-        std::cout << std::endl << MAGENTA << "Use again of beSigned with Bernard." << std::endl << RESET;
-        form1.beSigned(b);
+		std::cout << std::endl << BOLDWHITE << "Overload : " << RESET << form1;
+		std::cout << BOLDMAGENTA << "Use of beSigned with Bernard : " << RESET;
+		form1.beSigned(b);
     }
     catch (std::exception &e) {
         std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
     }
 	
-	/* =============================== SHRUBBERY CREATION FORM TEST =============================== */
+	/* =============================== ROBOTOMY REQUEST FORM TEST - ALREADY SIGNED =============================== */
 	
-    std::cout << std::endl << "--------------RobotomyRequestForm---------------"<< std::endl;
-    std::cout << std::endl << BOLDWHITE << "Creation of RobotomyRequestForm" << YELLOW << " using a try and catch : "<< RESET << std::endl;
-    
-    RobotomyRequestForm form2("form2");
-
-    std::cout << std::endl << MAGENTA << "getSignGrade : " << RESET;
-    std::cout << form2.getGradeToSign();
-    std::cout << std::endl << MAGENTA << "getExecGrade : " << RESET;
-    std::cout << form2.getGradeToExecute() << std::endl;
-    try {
-        std::cout << std::endl << MAGENTA << "Use of beSigned with Bernard." << RESET;
-        form2.beSigned(b);
-        std::cout << std::endl << std::endl << MAGENTA << "Use of overloader : " << std::endl << RESET;
-        std::cout << form2;
-        std::cout << std::endl << MAGENTA << "Use again of beSigned with john." << std::endl << RESET;
-        form2.beSigned(b);
-    }
-    catch (std::exception &e) {
-        std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
-    }
-    try {
-        std::cout << std::endl << MAGENTA << "Use of execute with john." << std::endl << RESET;
-        b.executeForm(form2);
-        std::cout << std::endl << std::endl << MAGENTA << "Use of overloader : " << std::endl << RESET;
-        std::cout << form2;
-        std::cout << std::endl << MAGENTA << "Use again of beSigned with john." << std::endl << RESET;
-        form2.beSigned(b);
-    }
-    catch (std::exception &e) {
-        std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
-    }
+	std::cout << std::endl << std::endl << "----- ROBOTOMY REQUEST FORM - ALREADY SIGNED -----" << std::endl << std::endl;
 	
-   /* =============================== SHRUBBERY CREATION FORM TEST =============================== */
+	std::cout << std::endl << BOLDWHITE << "Creation of RobotomyRequestForm" << BOLDYELLOW << " using a try and catch : "<< RESET << std::endl;
+	
+	RobotomyRequestForm form2("form2");
+	
+	std::cout << std::endl << BOLDWHITE << "getSignGrade : " << BOLDCYAN << form2.getGradeToSign();
+	std::cout << std::endl << BOLDWHITE << "getExecGrade : " << BOLDCYAN << form2.getGradeToExecute() << RESET << std::endl;
+	try {
+		std::cout << std::endl << BOLDMAGENTA << "Use of beSigned with Bernard : " << RESET;
+		form2.beSigned(b);
+		std::cout << std::endl << BOLDWHITE << "Overload : " << RESET << form2;
+		std::cout << std::endl << BOLDMAGENTA << "Use of beSigned with Bernard : " << RESET;
+		form2.beSigned(b);
+	}
+	catch (std::exception &e) {
+		std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
+	}
 
-    std::cout << std::endl << "--------------PresidentialPardonForm---------------"<< std::endl;
-    std::cout << std::endl << MAGENTA << "Creation of PresidentialPardonForm" << YELLOW << " using a try and catch : "<< RESET << std::endl;
-    
-    PresidentialPardonForm form3("form3");
-
-    std::cout << std::endl << MAGENTA << "getSignGrade : " << RESET;
-    std::cout << form3.getGradeToSign();
-    std::cout << std::endl << MAGENTA << "getExecGrade : " << RESET;
-    std::cout << form3.getGradeToExecute() << std::endl;
+	/* =============================== EXECUTE ROBOTOMY REQUEST FORM TEST =============================== */
+	
+	std::cout << std::endl << std::endl << "----- EXECUTE ROBOTOMY REQUEST FORM -----" << std::endl << std::endl;
+	
     try {
-        std::cout << std::endl << std::endl << MAGENTA << "Use of overloader : " << std::endl << RESET;
-        std::cout << form3;
-        std::cout << std::endl << MAGENTA << "Use of beSigned with john." << std::endl << RESET;
-        form3.beSigned(b);
+		std::cout << std::endl << BOLDMAGENTA << "Use of execute with Bernard : " << RESET;
+		b.executeForm(form2);
+		std::cout << std::endl << BOLDWHITE << "Overload : " << RESET << form2;
+		std::cout << BOLDMAGENTA << "Use of beSigned with Bernard : " << RESET;
+		form2.beSigned(b);
     }
     catch (std::exception &e) {
-        std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
-    }
-    try {
-        std::cout << std::endl << MAGENTA << "Use of execute with john." << std::endl << RESET;
-        b.executeForm(form3);
-        std::cout << std::endl << std::endl << MAGENTA << "Use of overloader : " << std::endl << RESET;
-        std::cout << form3;
-        std::cout << std::endl << MAGENTA << "Use again of beSigned with john." << std::endl << RESET;
-        form3.beSigned(b);
-    }
-    catch (std::exception &e) {
-        std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
-    }
+	std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
+	}
 
-    return(0);
+	/* =============================== PRESIDENTIAL PARDON FORM TEST =============================== */
+
+	std::cout << std::endl << std::endl << "----- PRESIDENTIAL PARDON FORM -----" << std::endl << std::endl;
+	
+	std::cout << std::endl << BOLDWHITE << "Creation of PresidentialPardonForm" << BOLDYELLOW << " using a try and catch : "<< RESET << std::endl;
+
+	PresidentialPardonForm form3("form3");
+
+	std::cout << std::endl << BOLDWHITE << "getSignGrade : " << BOLDCYAN << form3.getGradeToSign();
+	std::cout << std::endl << BOLDWHITE << "getExecGrade : " << BOLDCYAN << form3.getGradeToExecute() << std::endl;
+	try {
+		std::cout << std::endl << BOLDWHITE << "Overload : " << RESET << form3;
+		std::cout << BOLDMAGENTA << "Use of beSigned with Bernard : " << RESET;
+		form3.beSigned(b);
+	}
+	catch (std::exception &e) {
+	std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
+	}
+
+	/* =============================== EXECUTE PRESIDENTIAL PARDON FORM TEST =============================== */
+
+	std::cout << std::endl << std::endl << "----- EXECUTE PRESIDENTIAL PARDON FORM -----" << std::endl << std::endl;
+	
+	try {
+		std::cout << std::endl << BOLDMAGENTA << "Use of execute with Bernard : " << RESET;
+		b.executeForm(form3);
+		std::cout << std::endl << BOLDWHITE << "Overload : " << RESET << form3;
+		std::cout << BOLDMAGENTA << "Use of beSigned with Bernard : " << RESET;
+		form3.beSigned(b);
+	}
+	catch (std::exception &e) {
+		std::cerr << BOLDWHITE << "Output of Exception :  " << BOLDRED << e.what() << RESET << std::endl;
+	}
+
+	std::cout << std::endl << std::endl << "----- DESTRUCTORS -----" << std::endl << std::endl;
+
+	return(0);
 }

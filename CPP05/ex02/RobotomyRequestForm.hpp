@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:06:42 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 22:00:12 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 22:43:47 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,5 @@ class RobotomyRequestForm: public Form
 
 		void execute(Bureaucrat const &copy) const;
 };
-
-std::ostream &operator <<(std::ostream &os, const RobotomyRequestForm &robot);
 
 #endif

@@ -6,18 +6,19 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:07:21 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 21:33:08 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 22:46:28 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(std:: string target):
-	Form("PresidentialPardonForm", 25, 5)
+PresidentialPardonForm::PresidentialPardonForm(std:: string target) : Form("PresidentialPardonForm", 25, 5)
 {
+	std::cout << std::endl << BOLDGREEN << "PresidentialPardonForm constructor called" << RESET << std::endl;
 	_target = target;
 	srand(time(NULL));
 }
+
 PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &copy) : Form(copy)
 {
 	std::cout << "PresidentialPardonForm copy constructor called" << std::endl;
@@ -26,7 +27,7 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cop
 }
 
 PresidentialPardonForm::~PresidentialPardonForm(){
-	std::cout << "PresidentialPardonForm destructor called" << std::endl;
+	std::cout << std::endl << BOLDRED << "PresidentialPardonForm destructor called" << RESET << std::endl;
 }
 
 PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPardonForm &assign)
@@ -50,11 +51,5 @@ void PresidentialPardonForm::execute(Bureaucrat const &copy) const
 
 	std::cout << copy.getName() + " executes " + _name << std::endl;
 	
-	std::cout << _target << " has been pardoned by Zaphod Beeblebrox" << std::endl;
-}
-
-std::ostream &operator <<(std::ostream &os, const PresidentialPardonForm &pres)
-{
-	os << "Form " << pres.getName() << " with grade " << pres.getGradeToSign() << " and " << pres.getGradeToExecute() << std::endl;
-	return os;
+	std::cout << BOLDYELLOW << _target << " has been pardoned by Zaphod Beeblebrox" << RESET << std::endl;
 }
