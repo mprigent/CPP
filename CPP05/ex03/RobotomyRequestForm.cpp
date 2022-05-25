@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:06:54 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 23:19:44 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 23:19:34 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ void RobotomyRequestForm::execute(Bureaucrat const &copy) const
 	std::cout << std::endl << BOLDYELLOW << "* BSSSSI.........BSIIII..........BSZII *" << RESET << std::endl;
 	srand(time(NULL));
 	if(rand() % 2 == 0)
-		std::cout << BOLDYELLOW << _target << " has been robotomized ! " << RESET << std::endl;
+		std::cout << BOLDYELLOW << _target << " has been robotomized ! " << RESET << std::endl << std::endl;
 	else
-		std::cout << BOLDYELLOW << "The robotization failed !" << RESET << std::endl;
+		std::cout << BOLDYELLOW << "The robotization failed !" << RESET << std::endl<< std::endl;
 }
