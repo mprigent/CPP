@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:06:15 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 22:46:56 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 23:29:48 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &copy) const
 	
 	std::cout << copy.getName() + " executes " + _name + " and create " BOLDYELLOW + _target + "_shrubbery " RESET "file" << std::endl;
 	
-	file.open(_target + "_shrubbery", std::fstream::out);
+	file.open(std::string(_target + "_shrubbery").c_str(), std::ios::out | std::ios::app);
 	if (!file)
 	{
 		std::cout << "Error while creating " + _target + "_shrubbery file" << std::endl;

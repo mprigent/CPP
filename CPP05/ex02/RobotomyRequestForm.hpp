@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:06:42 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 22:43:47 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 23:30:15 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # include <iostream>
 # include <string>
+# include <cstdlib>
 # include "Form.hpp"
 
 class RobotomyRequestForm: public Form
