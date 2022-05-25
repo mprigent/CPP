@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:21:12 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/24 16:02:54 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 01:22:29 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,15 +74,6 @@ class Bureaucrat
 					return("Grade too low");
 				}
 		};
-		
-		// class FormNotSignedException : public std::exception
-		// {
-		// 	public:
-		// 		virtual const char *what() const throw()
-		// 		{
-		// 			return("Couldn't sign form because already sign");
-		// 		}
-		// };
 };
 
 std::ostream &operator <<(std::ostream &stream, Bureaucrat const &bureaucrat);

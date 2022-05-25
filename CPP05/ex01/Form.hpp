@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 15:23:07 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/24 17:24:17 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 01:21:54 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ class Form
 		int getGradeToSign() const;
 		int getGradeToExecute() const;
 
-		void beSigned(Bureaucrat bureaucrat);
+		void beSigned(Bureaucrat bureaucrat);	//change le status du formulaire en signé si l’échelon du Bureaucrat est suffisant (supérieur ou égal à l’échelon requis)
 
 		class GradeTooHighException: public std::exception		// Exceptions -> echelon trop haut
 		{

@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:20:51 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 01:18:26 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 14:42:32 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,11 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)	// defau
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName()), _grade(copy.getGrade())	// copy constructor
 {
 	_grade = copy.getGrade();
-	std::cout << "Bureaucrat copy " << _name << " created with grade " << _grade << std::endl;
+	std::cout << "Bureaucrat copy " << _name << " created with grade " << _grade << std::endl << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(){												// destructor
-	std::cout << std::endl << BOLDRED << "Bureaucrat " << _name << " has been destroyed" << RESET << std::endl;
+	std::cout << BOLDRED << "Bureaucrat " << _name << " has been destroyed" << RESET << std::endl;
 }
 
 Bureaucrat & Bureaucrat::operator =(const Bureaucrat &assign)			// operateur d'affectation
@@ -68,7 +68,7 @@ void	Bureaucrat::signForm(Form &form)
 	try
 	{
 		form.beSigned(*this);
-		std::cout << _name << " signed " << form.getName() << std::endl;
+		std::cout  << BOLDWHITE << _name << " signed " << form.getName() << RESET << std::endl;
 	}
 	catch(const std::exception& e)
 	{
