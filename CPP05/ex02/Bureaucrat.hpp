@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:21:12 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 19:28:40 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 19:29:01 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,11 @@ class Bureaucrat
 		const std::string getName() const;
 		int getGrade() const;
 
+		/* fonctions membres */
 		void incrementGrade(void);
 		void decrementGrade(void);
 		void signForm(Form &form);
+		void executeForm(Form const &form);
 		
 		/* Exceptions */
 		class GradeTooHighException: public std::exception		// Exceptions -> echelon trop haut

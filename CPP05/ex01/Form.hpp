@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 15:23:07 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 01:21:54 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 15:40:33 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,12 +47,12 @@ class Form
 		const int _execGrade;
 	
 	public :
-		Form();
-		Form(std::string name, const int signGrade, const int execGrade);
-		Form(const Form &copy);
-		~Form();
-		Form &operator =(const Form &assign);
+		Form(std::string name, const int signGrade, const int execGrade);	// default constructor
+		Form(const Form &copy);												// copy constructor
+		Form &operator =(const Form &assign);								// operateur d'assignation
+		~Form();															// destructeur
 		
+		/* Accesseurs */
 		const std::string getName() const;
 		bool getSigned() const;
 		void setSign();
@@ -61,6 +61,7 @@ class Form
 
 		void beSigned(Bureaucrat bureaucrat);	//change le status du formulaire en signé si l’échelon du Bureaucrat est suffisant (supérieur ou égal à l’échelon requis)
 
+		/* Exceptions */
 		class GradeTooHighException: public std::exception		// Exceptions -> echelon trop haut
 		{
 			public :

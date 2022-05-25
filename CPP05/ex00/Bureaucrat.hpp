@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:21:12 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/24 15:08:18 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 15:40:59 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,15 @@ class Bureaucrat
 		~Bureaucrat();											// Destructeur
 		Bureaucrat & operator=(const Bureaucrat &assign);		// Opérateur d'affectation
 		
-		const std::string getName() const;						// Accesseurs
+		/* Accesseurs */
+		const std::string getName() const;
 		int getGrade() const;
 
+		/* Fonctions membres */
 		void incrementGrade(void);
 		void decrementGrade(void);
 		
+		/* Exceptions */
 		class GradeTooHighException: public std::exception		// Exceptions -> echelon trop haut
 		{
 			public :

@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/24 14:21:12 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 19:28:40 by mprigent         ###   ########.fr       */
+/*   Created: 2022/05/24 15:23:07 by mprigent          #+#    #+#             */
+/*   Updated: 2022/05/25 21:35:43 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+# define FORM_HPP
 
-# include <string>
 # include <iostream>
 # include <exception>
-# include "Form.hpp"
+# include <string>
+# include "Bureaucrat.hpp"
 
 # define RESET       "\033[0m"
 # define BLACK       "\033[30m"             /* Black */
@@ -36,27 +36,32 @@
 # define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
 # define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
 
-class Form;
+class Bureaucrat;
 
-class Bureaucrat
+class Form
 {
-	private:
+	protected :
 		const std::string _name;
-		int _grade;		// entre 1 et 150
-		
-	public:
-		Bureaucrat(const std::string name, int grade);			// default constructor
-		Bureaucrat(const Bureaucrat &copy);						// copy constructor
-		~Bureaucrat();											// Destructeur
-		Bureaucrat & operator=(const Bureaucrat &assign);		// Opérateur d'affectation
+		bool _signed;
+		const int _signGrade;
+		const int _execGrade;
+	
+	public :
+		Form(std::string name, const int signGrade, const int execGrade);	// default constructor
+		Form(const Form &copy);												// copy constructor
+		Form &operator =(const Form &assign);								// operateur d'assignation
+		~Form();															// destructeur
 		
 		/* Accesseurs */
 		const std::string getName() const;
-		int getGrade() const;
+		bool getSigned() const;
+		void setSign();
+		int getGradeToSign() const;
+		int getGradeToExecute() const;
 
-		void incrementGrade(void);
-		void decrementGrade(void);
-		void signForm(Form &form);
+		/* fonction membre */
+		void beSigned(Bureaucrat bureaucrat);	//change le status du formulaire en signé si l’échelon du Bureaucrat est suffisant (supérieur ou égal à l’échelon requis)
+		virtual void execute(Bureaucrat const &copy) const = 0;
 		
 		/* Exceptions */
 		class GradeTooHighException: public std::exception		// Exceptions -> echelon trop haut
@@ -76,8 +81,26 @@ class Bureaucrat
 					return("Grade too low");
 				}
 		};
+
+		class AlreadySignedException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return("Form already signed");
+				}
+		};
+
+		class NotSignedException : public std::exception
+		{
+			public:
+				virtual const char *what() const throw()
+				{
+					return("Form not signed");
+				}
+		};
 };
 
-std::ostream &operator <<(std::ostream &stream, Bureaucrat const &bureaucrat);
+std::ostream &operator <<(std::ostream &stream, Form const &Form);
 
 #endif
