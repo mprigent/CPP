@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 14:20:51 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 23:18:33 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/25 22:33:59 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ Bureaucrat::Bureaucrat(const std::string name, int grade) : _name(name)	// defau
 Bureaucrat::Bureaucrat(const Bureaucrat &copy) : _name(copy.getName()), _grade(copy.getGrade())	// copy constructor
 {
 	_grade = copy.getGrade();
-	std::cout << "Bureaucrat copy " << _name << " created with grade " << _grade << std::endl;
+	std::cout << "Bureaucrat copy " << _name << " created with grade " << _grade << std::endl << std::endl;
 }
 
 Bureaucrat::~Bureaucrat(){												// destructor

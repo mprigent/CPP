@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/23 19:25:27 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 22:51:00 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/26 20:31:22 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ int main(void) {
 	std::cout << std::endl << std::endl << "----- EXECUTE SHRUBBERY CREATION FORM -----" << std::endl << std::endl;
 	
 	try {
-		std::cout << std::endl << BOLDMAGENTA << "Use of execute with Bernard : " << RESET;
+		std::cout << std::endl << BOLDMAGENTA << "Use of execute with Bernard : " << RESET << std::endl;
 		b.executeForm(form1);
 		std::cout << std::endl << BOLDWHITE << "Overload : " << RESET << form1;
 		std::cout << BOLDMAGENTA << "Use of beSigned with Bernard : " << RESET;
@@ -82,7 +82,7 @@ int main(void) {
 	std::cout << std::endl << std::endl << "----- EXECUTE ROBOTOMY REQUEST FORM -----" << std::endl << std::endl;
 	
     try {
-		std::cout << std::endl << BOLDMAGENTA << "Use of execute with Bernard : " << RESET;
+		std::cout << std::endl << BOLDMAGENTA << "Use of execute with Bernard : " << RESET << std::endl;
 		b.executeForm(form2);
 		std::cout << std::endl << BOLDWHITE << "Overload : " << RESET << form2;
 		std::cout << BOLDMAGENTA << "Use of beSigned with Bernard : " << RESET;
@@ -116,7 +116,7 @@ int main(void) {
 	std::cout << std::endl << std::endl << "----- EXECUTE PRESIDENTIAL PARDON FORM -----" << std::endl << std::endl;
 	
 	try {
-		std::cout << std::endl << BOLDMAGENTA << "Use of execute with Bernard : " << RESET;
+		std::cout << std::endl << BOLDMAGENTA << "Use of execute with Bernard : " << RESET << std::endl;
 		b.executeForm(form3);
 		std::cout << std::endl << BOLDWHITE << "Overload : " << RESET << form3;
 		std::cout << BOLDMAGENTA << "Use of beSigned with Bernard : " << RESET;

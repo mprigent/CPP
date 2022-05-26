@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:07:21 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 22:46:28 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/26 20:34:17 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,8 @@ std::string PresidentialPardonForm::getTarget() const {
 	return _target;
 }
 
-void PresidentialPardonForm::execute(Bureaucrat const &copy) const
+void PresidentialPardonForm::executed() const
 {
-	if (copy.getGrade() > this->getGradeToExecute())
-	{
-		std::cout << copy.getName() + " are not high enough to execute this form" << std::endl;
-		throw Form::GradeTooLowException();
-	}
-
-	std::cout << copy.getName() + " executes " + _name << std::endl;
-	
+	std::cout << BOLDWHITE << "Execution : " RESET + _name << std::endl;
 	std::cout << BOLDYELLOW << _target << " has been pardoned by Zaphod Beeblebrox" << RESET << std::endl;
 }

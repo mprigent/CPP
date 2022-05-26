@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:06:54 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 23:19:34 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/26 20:34:01 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,14 @@ std::string RobotomyRequestForm::getTarget() const{
 	return _target;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const &copy) const
+void RobotomyRequestForm::executed() const
 {
-	if (copy.getGrade() > this->getGradeToExecute())
-	{
-		std::cout << copy.getName() + " are not high enough to execute this form" << std::endl;
-		throw Form::GradeTooLowException();
-	}
-
-	std::cout << copy.getName() + " executes " + _name << std::endl;
+	std::cout << BOLDWHITE << "Execution : " RESET + _name << std::endl;
 	
 	std::cout << std::endl << BOLDYELLOW << "* BSSSSI.........BSIIII..........BSZII *" << RESET << std::endl;
 	srand(time(NULL));
 	if(rand() % 2 == 0)
-		std::cout << BOLDYELLOW << _target << " has been robotomized ! " << RESET << std::endl << std::endl;
+		std::cout << BOLDYELLOW << _target << " has been robotomized ! " << RESET << std::endl;
 	else
-		std::cout << BOLDYELLOW << "The robotization failed !" << RESET << std::endl<< std::endl;
+		std::cout << BOLDYELLOW << "The robotization failed !" << RESET << std::endl;
 }

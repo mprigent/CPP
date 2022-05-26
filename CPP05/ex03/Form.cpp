@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/24 15:22:56 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 22:52:02 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/26 15:17:15 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,16 @@ void Form::beSigned(Bureaucrat bureaucrat)
 		std::cout << BOLDWHITE << "Output of Exception :  " << BOLDRED << bureaucrat.getName() << " couldn't sign " << RESET << std::endl << std::endl;
 		throw Form::GradeTooLowException();
 	}
+}
+
+void Form::execute(Bureaucrat const &executor) const
+{
+	if(!_signed)
+		throw Form::NotSignedException();
+	if(executor.getGrade() <= _execGrade)
+		executed();
+	else
+		throw Form::GradeTooLowException();
 }
 
 std::ostream &operator<<(std::ostream &stream, Form const &form)

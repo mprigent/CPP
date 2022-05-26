@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:06:42 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 23:30:15 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/26 15:18:52 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class RobotomyRequestForm: public Form
 		/* Accesseurs */
 		std::string getTarget() const;
 
-		void execute(Bureaucrat const &copy) const;
+		void executed() const;
 };
 
 #endif

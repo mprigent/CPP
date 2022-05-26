@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:06:15 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 23:29:48 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/26 20:34:43 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,17 +39,11 @@ std::string ShrubberyCreationForm::getTarget() const {
 	return _target;
 }
 
-void ShrubberyCreationForm::execute(Bureaucrat const &copy) const 
+void ShrubberyCreationForm::executed() const 
 {
 	std::fstream file;
 	
-	if (copy.getGrade() > this->getGradeToExecute())
-	{
-		std::cout << copy.getName() + " are not high enough to execute this form" << std::endl;
-		throw Form::GradeTooLowException();
-	}
-	
-	std::cout << copy.getName() + " executes " + _name + " and create " BOLDYELLOW + _target + "_shrubbery " RESET "file" << std::endl;
+	std::cout << BOLDWHITE << " Execution : " RESET + _name << std::endl << " Creation : " BOLDYELLOW + _target + "_shrubbery " RESET "file" << std::endl;
 	
 	file.open(std::string(_target + "_shrubbery").c_str(), std::ios::out | std::ios::app);
 	if (!file)

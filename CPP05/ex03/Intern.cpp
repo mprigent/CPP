@@ -6,17 +6,17 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 22:59:12 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 23:21:56 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/26 20:36:54 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Intern.hpp"
 
-Intern::Intern(void) {
+Intern::Intern() {
 	std::cout << BOLDGREEN << "Intern created" << RESET << std::endl;
 }
 
-Intern::Intern(Intern const & copy) 
+Intern::Intern(Intern const &copy) 
 {
 	(void)copy;
 	std::cout << "Intern has been copied." << std::endl;

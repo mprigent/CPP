@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:06:06 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 22:00:29 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/26 15:19:53 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class ShrubberyCreationForm: public Form
 		/* Accesseurs */
 		std::string getTarget() const;
 
-		void execute(Bureaucrat const &src) const;
+		void executed() const;
 
 		/* Exception */
 		class ErrorFileException : public std::exception

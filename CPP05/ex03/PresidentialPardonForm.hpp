@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/25 15:07:12 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/25 22:43:59 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/26 15:18:26 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class PresidentialPardonForm: public Form
 		/* Accesseurs */
 		std::string getTarget() const;
 
-		void execute(Bureaucrat const &copy) const;
+		void executed() const;
 };
 
 #endif
