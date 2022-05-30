@@ -6,9 +6,12 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:39:26 by mprigent          #+#    #+#             */
-/*   Updated: 2022/05/30 20:48:11 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/05/30 20:56:16 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef CONVERT_HPP
+#define CONVERT_HPP
 
 #include <iostream>
 #include <iomanip>
@@ -51,3 +54,5 @@ class Convert
 };
 
 std::ostream &operator <<(std::ostream &ostream, const Convert &conv);
+
+#endif
