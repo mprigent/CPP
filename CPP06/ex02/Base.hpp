@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Data.hpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/30 20:54:36 by mprigent          #+#    #+#             */
-/*   Updated: 2022/06/01 13:36:27 by mprigent         ###   ########.fr       */
+/*   Created: 2022/06/01 13:35:27 by mprigent          #+#    #+#             */
+/*   Updated: 2022/06/01 13:38:46 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DATA_HPP
-#define DATA_HPP
+#ifndef BASE_HPP
+#define BASE_HPP
 
 #include <iostream>
 
@@ -33,18 +33,33 @@
 # define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
 # define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
 
-class Data
+class Base 
 {
-	private :
-		std::string _data;
-		
 	public:
-		Data(std::string str);
-		Data(Data const &copy);
-		Data &operator =(Data const &assign);
-		~Data(void);
+	virtual ~Base() {};
 };
 
-std::ostream &operator <<(std::ostream &ostream, const Data &data);
+class A : public Base 
+{
+	public:
+		virtual ~A() {};
+};
+
+class B : public Base 
+{
+	public:
+		virtual ~B() {};
+};
+
+class C : public Base 
+{
+	public:
+		virtual ~C() {};
+};
+
+Base *generate(void);
+void identify(Base *p);
+void identify(Base &p);
+
 
 #endif
