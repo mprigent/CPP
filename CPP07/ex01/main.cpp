@@ -5,27 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/01 14:01:24 by mprigent          #+#    #+#             */
-/*   Updated: 2022/06/01 14:55:35 by mprigent         ###   ########.fr       */
+/*   Created: 2022/06/01 14:55:59 by mprigent          #+#    #+#             */
+/*   Updated: 2022/06/01 15:10:18 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "whatever.hpp"
-#include <iostream>
+#include "iter.hpp"
 
 int main(void)
 {
-	int a = 2;
-	int b = 3;
-	::swap( a, b );
-	std::cout << "a = " << a << ", b = " << b << std::endl;
-	std::cout << "min( a, b ) = " << ::min( a, b ) << std::endl;
-	std::cout << "max( a, b ) = " << ::max( a, b ) << std::endl;
-	std::string c = "chaine1";
-	std::string d = "chaine2";
-	::swap(c, d);
-	std::cout << "c = " << c << ", d = " << d << std::endl;
-	std::cout << "min( c, d ) = " << ::min( c, d ) << std::endl;
-	std::cout << "max( c, d ) = " << ::max( c, d ) << std::endl;
-	return (0);
+	int tab[10];
+
+	int len = 10;
+	for(int i = 0; i < len; i++)
+		tab[i] = 'A' + i;
+		
+	std::cout << BOLDMAGENTA << "Call of iter : " << RESET << std::endl;
+	iter(tab, len, print_elem);
+	
+	std::cout << std::endl;
+	for (int j = 0; j < len; j++)
+		tab[j] = 'Z' - j;
+
+	std::cout << BOLDMAGENTA << "Call of iter : " << RESET << std::endl;
+	iter(tab, len, print_elem);
+
+	return(0);
 }
