@@ -6,76 +6,64 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 15:50:33 by mprigent          #+#    #+#             */
-/*   Updated: 2022/06/04 17:47:12 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/06/04 18:40:41 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Span.hpp"
 
-Span::Span() : _size(0), _tab() {
-	std::cout << BOLDWHITE << "Default constructor called" << RESET << std::endl;
+Span::Span (void) : _size(0), _vector(){
 }
 
-Span::Span(Span const &copy) {
+Span::Span (const Span &copy) {
 	*this = copy;
 }
 
-Span::Span(unsigned int size)
-{
-	if (size <= 0)
-		throw std::exception();
-	_size = size;
+Span::Span (uint32_t size) : _size(size), _vector(){
 }
 
-Span &Span::operator=(Span const &assign)
+Span &Span::operator =(const Span &assign)
 {
-	_size = assign._size;
-	_tab = assign._tab;
+	if (this == &assign) {return (*this);};
+	
+	this->_size = assign._size;
+	this->_vector = std::vector<int>(assign._vector);
+
 	return (*this);
 }
 
-Span::~Span(void){
+Span::~Span (void){
 }
 
-void Span::addNumber(int n)
+void Span::addRange (Iterator start, Iterator end)
 {
-	if (_tab.size() >= _size)
-		throw std::exception();
-	_tab.push_back(n);
+	if (std::distance (start, end) + _vector.size() >= _size)
+		throw Span::CannotAddRange();
+	_vector.insert (_vector.end(), start, end);
 }
 
-std::vector<int> Span::getvec(void) const {
-	return (_tab);
-}
-
-unsigned int Span::shortestSpan(void)
+void Span::addNumber (int n)
 {
-	unsigned int shortest = _tab[1] - _tab[0];
-	unsigned int distance = 0;
+	if (_vector.size() >= _size)
+		throw Span::CannotAddNumberInSpan();
+	_vector.push_back(n);
+}
 
-	std::vector<int> temp = _tab;
-	if (_size < 2)
-		throw std::exception();
-	std::sort(temp.begin(), temp.end());
-	for (unsigned int i = 1; i < temp.size(); i++)
+int Span::shortestSpan (void)
+{
+	std::vector<int>::iterator it1 = _vector.begin();
+	std::vector<int>::iterator ite = _vector.end();
+	int min = INT_MAX;
+
+	for(; it1 != ite; it1++)
 	{
-		distance = temp[i] - temp[i - 1];
-		if (distance < shortest)
-			shortest = distance;
+		for (std::vector<int>::iterator it2 = (it1 + 1); it2 != ite; it2++)
+			if (std::abs(*it1 - *it2) < min)
+				min = std::abs(*it1 - *it2);
 	}
-	return (shortest);
+	return min;
 }
 
-unsigned int Span::longestSpan(void) const
-{
-	if (_tab.size() <= 1)
-		throw(std::out_of_range("Not enough elements for a span"));
-	return (*std::max_element(_tab.begin(), _tab.end()) - *std::min_element(_tab.begin(), _tab.end()));
-}
-
-void Span::addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
-{
-	if (_size - _tab.size() < (unsigned long int)std::distance(begin, end))
-		throw std::exception();
-	_tab.insert(_tab.end(), begin, end);
+int Span::longestSpan (void) {
+	return (*max_element(_vector.begin(), _vector.end()) - *min_element(_vector.begin(), _vector.end()));
 }

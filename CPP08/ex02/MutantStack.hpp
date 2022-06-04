@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 17:58:22 by mprigent          #+#    #+#             */
-/*   Updated: 2022/06/04 18:01:29 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/06/04 18:53:41 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <stack>
+#include <list>
 
 # define RESET       "\033[0m"
 # define BLACK       "\033[30m"             /* Black */

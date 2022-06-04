@@ -6,19 +6,18 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 15:50:40 by mprigent          #+#    #+#             */
-/*   Updated: 2022/06/04 17:38:56 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/06/04 18:42:35 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SPAN_HPP
 # define SPAN_HPP
 
-# include <iostream>
-# include <string>
-# include <vector>
-# include <iterator>
-# include <algorithm>
-# include <climits>
+#include <vector>
+#include <iostream>
+#include <algorithm>
+#include <limits.h>
+#include <stdint.h>
 
 # define RESET       "\033[0m"
 # define BLACK       "\033[30m"             /* Black */
@@ -38,23 +37,64 @@
 # define BOLDCYAN    "\033[1m\033[36m"      /* Bold Cyan */
 # define BOLDWHITE   "\033[1m\033[37m"      /* Bold White */
 
+
 class Span
 {
 	private:
-		unsigned int _size;
-		std::vector<int> _tab;
+		uint32_t 			_size;
+		std::vector<int>	_vector;
 
 	public:
-		Span();
-		Span(unsigned int size);
-		Span(Span const &src);
-		~Span(void);
-		Span &operator =(Span const &rhs);
-		void addNumber(int n);
-		std::vector <int> getvec(void) const;
-		unsigned int shortestSpan(void);
-		unsigned int longestSpan(void) const;
-		void addNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end);
+
+		typedef std::vector<int>::iterator Iterator;
+
+		Span (void);
+		Span (const Span&);
+		Span (uint32_t);
+		~Span (void);
+
+		Span& 	operator=(const Span&);
+
+		void	addNumber (int);
+		int		shortestSpan (void);
+		int		longestSpan (void);
+		void	addRange (Iterator start, Iterator end);
+
+		void	putSpan (void)
+		{
+			std::vector<int>::iterator it = _vector.begin();
+			std::vector<int>::iterator ite = _vector.end();
+
+			while(it != ite)
+				std::cout << *it++ << std::endl;
+		}
+
+		class SpanIsEmpty : public std::exception
+		{
+			public:
+				virtual const char* what (void) const throw()
+				{
+					return "the current Span is empty";
+				}
+		};
+
+		class CannotAddNumberInSpan : public std::exception
+		{
+			public:
+				virtual const char* what (void) const throw()
+				{
+					return "cannot add number in Span";
+				}
+		};
+
+		class CannotAddRange : public std::exception
+		{
+			public:
+				virtual const char* what (void) const throw()
+				{
+					return "cannot add range in Span";
+				}
+		};
 };
 
 #endif
