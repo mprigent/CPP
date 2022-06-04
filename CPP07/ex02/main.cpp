@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 15:15:41 by mprigent          #+#    #+#             */
-/*   Updated: 2022/06/04 00:23:46 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/06/04 15:19:30 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,6 @@ int main(int, char**)
 
 	delete [] tab;
 	std::cout << std::endl;
-	return 0;
+
+	return (0);
 }

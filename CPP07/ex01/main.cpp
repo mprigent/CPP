@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/01 14:55:59 by mprigent          #+#    #+#             */
-/*   Updated: 2022/06/01 15:10:18 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/06/04 15:19:11 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,5 +30,5 @@ int main(void)
 	std::cout << BOLDMAGENTA << "Call of iter : " << RESET << std::endl;
 	iter(tab, len, print_elem);
 
-	return(0);
+	return (0);
 }
