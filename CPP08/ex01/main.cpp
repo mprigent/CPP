@@ -6,7 +6,7 @@
 /*   By: mprigent <mprigent@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/04 15:49:57 by mprigent          #+#    #+#             */
-/*   Updated: 2022/06/04 18:45:41 by mprigent         ###   ########.fr       */
+/*   Updated: 2022/06/04 18:58:37 by mprigent         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int main()
 		sp.addNumber(9);
 		sp.addNumber(11);
 
-		std::cout << std::endl << BOLDWHITE <<  "----- SPAN -----" << RESET << std::endl << std::endl;
+		std::cout << std::endl << BOLDGREEN <<  "----- SPAN -----" << RESET << std::endl << std::endl;
 
 		sp.putSpan();
 
@@ -39,7 +39,7 @@ int main()
 
 		sp.addRange(tab.begin(), tab.end());
 
-		std::cout << std::endl << BOLDWHITE <<  "----- SPAN -----" << RESET << std::endl << std::endl;
+		std::cout << std::endl << BOLDGREEN <<  "----- SPAN -----" << RESET << std::endl << std::endl;
 
 		sp.putSpan();
 
@@ -55,7 +55,7 @@ int main()
 		sp.addRange(tab.begin() + 5, tab.end());
 
 
-		std::cout << std::endl << BOLDWHITE <<  "----- SPAN -----" << RESET << std::endl << std::endl;
+		std::cout << std::endl << BOLDGREEN <<  "----- SPAN -----" << RESET << std::endl << std::endl;
 
 		sp.putSpan();
 			
